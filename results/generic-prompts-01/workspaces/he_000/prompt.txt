@@ -1,0 +1,1 @@
+Implement has_close_elements in src/solution.py according to its docstring.

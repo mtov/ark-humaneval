@@ -1,0 +1,45 @@
+[request]
+Implement rescale_to_unit in src/solution.py according to its docstring.
+
+[response 1]
+thought: I’ll inspect the target file and its docstring to determine the required behavior.
+action: read_file src/solution.py
+
+[response 2]
+thought: Implement min-max scaling, with constant lists mapped to zeros to avoid division by zero.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -7,4 +7,8 @@
+     >>> rescale_to_unit([1.0, 2.0, 3.0, 4.0, 5.0])
+     [0.0, 0.25, 0.5, 0.75, 1.0]
+     """
+-    pass
++    minimum = min(numbers)
++    maximum = max(numbers)
++    if minimum == maximum:
++        return [0.0 for _ in numbers]
++    return [(number - minimum) / (maximum - minimum) for number in numbers]
+
+
+[response 3]
+thought: The implementation edit was applied, and the docstring specifies the required min-max scaling behavior.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 2130
+elapsed_seconds: 8.73
+tool_counts: read_file=1, edit_file=1, finish=1, run_tests=1
+

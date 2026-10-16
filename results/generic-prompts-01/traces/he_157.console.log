@@ -1,0 +1,32 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Implement right_angle_triangle in src/solution.py according to its docstring.
+[1] list_files .
+[2] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -9,4 +9,9 @@
+     right_angle_triangle(3, 4, 5) == True
+     right_angle_triangle(1, 2, 3) == False
+     '''
+-    pass
++    sides = sorted((a, b, c))
++    return (
++        sides[0] > 0
++        and sides[0] + sides[1] > sides[2]
++        and sides[0] ** 2 + sides[1] ** 2 == sides[2] ** 2
++    )
+Authorize edit? [y/N]: [3] edit_file
+Running tests...
+Tests: passed
+[4] run_tests
+[5] finish
+Running tests...
+Tests: passed
+Total tokens: 3455
+Elapsed time: 14.55s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

@@ -1,0 +1,1 @@
+Implement compare_one in src/solution.py according to its docstring.

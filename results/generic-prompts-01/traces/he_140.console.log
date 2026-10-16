@@ -1,0 +1,38 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Implement fix_spaces in src/solution.py according to its docstring.
+[1] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -10,4 +10,16 @@
+     fix_spaces(" Example 2") == "_Example_2"
+     fix_spaces(" Example   3") == "_Example-3"
+     """
+-    pass
++    result = []
++    index = 0
++    while index < len(text):
++        if text[index] == " ":
++            end = index
++            while end < len(text) and text[end] == " ":
++                end += 1
++            result.append("-" if end - index > 2 else "_" * (end - index))
++            index = end
++        else:
++            result.append(text[index])
++            index += 1
++    return "".join(result)
+Authorize edit? [y/N]: [2] edit_file
+Running tests...
+Tests: passed
+[3] run_tests
+[4] finish
+Running tests...
+Tests: passed
+Total tokens: 2982
+Elapsed time: 20.18s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

@@ -1,0 +1,54 @@
+[request]
+Implement solve in src/solution.py according to its docstring.
+
+[response 1]
+thought: I’ll inspect the workspace to locate the solution file.
+action: list_files src/solution.py
+
+[response 2]
+thought: I need to read `src/solution.py` to inspect the `solve` docstring and current implementation.
+action: read_file src/solution.py
+
+[response 3]
+thought: Use `swapcase()` to reverse the case of letters, and reverse the string only when it contains no letters.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -10,4 +10,6 @@
+     solve("ab") = "AB"
+     solve("#a@C") = "#A@c"
+     """
+-    pass
++    if not any(char.isalpha() for char in s):
++        return s[::-1]
++    return s.swapcase()
+
+
+[response 4]
+thought: The implementation was already applied; run the tests to validate it.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 5]
+thought: The implementation was applied and the tests passed.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 3472
+elapsed_seconds: 14.59
+tool_counts: list_files=1, read_file=1, edit_file=1, run_tests=2, finish=1
+

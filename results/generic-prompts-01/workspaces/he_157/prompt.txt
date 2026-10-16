@@ -1,0 +1,1 @@
+Implement right_angle_triangle in src/solution.py according to its docstring.

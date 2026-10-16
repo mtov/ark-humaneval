@@ -1,0 +1,31 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Implement pairs_sum_to_zero in src/solution.py according to its docstring.
+[1] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -16,4 +16,9 @@
+     >>> pairs_sum_to_zero([1])
+     False
+     """
+-    pass
++    seen = set()
++    for value in l:
++        if -value in seen:
++            return True
++        seen.add(value)
++    return False
+Authorize edit? [y/N]: [2] edit_file
+Running tests...
+Tests: passed
+[3] run_tests
+[4] finish
+Running tests...
+Tests: passed
+Total tokens: 2864
+Elapsed time: 9.12s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

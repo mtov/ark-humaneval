@@ -1,0 +1,58 @@
+[request]
+Implement monotonic in src/solution.py according to its docstring.
+
+[response 1]
+thought: I’ll inspect the workspace to locate `src/solution.py` and review its docstring.
+action: list_files .
+
+[response 2]
+thought: I’ll inspect the solution file to read its docstring and implement the specified behavior.
+action: read_file src/solution.py
+
+[response 3]
+thought: The docstring defines monotonic as either nondecreasing or nonincreasing; I’ll check the existing tests before implementing it.
+action: list_files tests
+
+[response 4]
+thought: The list is monotonic if every adjacent pair is nondecreasing or every adjacent pair is nonincreasing; this also handles empty and single-element lists.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -9,4 +9,6 @@
+     >>> monotonic([4, 1, 0, -10])
+     True
+     """
+-    pass
++    return all(l[i] <= l[i + 1] for i in range(len(l) - 1)) or all(
++        l[i] >= l[i + 1] for i in range(len(l) - 1)
++    )
+
+
+[response 5]
+thought: The implementation was applied; run the tests to validate it.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 6]
+thought: The implementation has been updated and the tests pass.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 3931
+elapsed_seconds: 12.27
+tool_counts: list_files=2, read_file=1, edit_file=1, run_tests=2, finish=1
+

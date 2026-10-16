@@ -1,0 +1,28 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Implement closest_integer in src/solution.py according to its docstring.
+[1] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -17,4 +17,6 @@
+     farthest from zero. For example closest_integer("14.5") should
+     return 15 and closest_integer("-14.5") should return -15.
+     '''
+-    pass
++    from decimal import Decimal, ROUND_HALF_UP
++
++    return int(Decimal(value).to_integral_value(rounding=ROUND_HALF_UP))
+Authorize edit? [y/N]: [2] edit_file
+Running tests...
+Tests: passed
+[3] run_tests
+[4] finish
+Running tests...
+Tests: passed
+Total tokens: 2909
+Elapsed time: 10.37s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

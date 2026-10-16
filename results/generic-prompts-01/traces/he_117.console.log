@@ -1,0 +1,31 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Implement select_words in src/solution.py according to its docstring.
+[1] list_files src/solution.py
+[2] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -12,4 +12,8 @@
+     select_words("Hello world", 4) ==> ["world"]
+     select_words("Uncle sam", 3) ==> ["Uncle"]
+     """
+-    pass
++    vowels = "aeiou"
++    return [
++        word for word in s.split()
++        if sum(1 for char in word if char.lower() not in vowels) == n
++    ]
+Authorize edit? [y/N]: [3] edit_file
+Running tests...
+Tests: passed
+[4] run_tests
+[5] finish
+Running tests...
+Tests: passed
+Total tokens: 3670
+Elapsed time: 13.35s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

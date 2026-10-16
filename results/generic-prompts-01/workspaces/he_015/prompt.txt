@@ -1,0 +1,1 @@
+Implement string_sequence in src/solution.py according to its docstring.

@@ -1,0 +1,34 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Implement correct_bracketing in src/solution.py according to its docstring.
+[1] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -13,4 +13,12 @@
+     >>> correct_bracketing("><<>")
+     False
+     """
+-    pass
++    balance = 0
++    for bracket in brackets:
++        if bracket == "<":
++            balance += 1
++        else:
++            balance -= 1
++            if balance < 0:
++                return False
++    return balance == 0
+Authorize edit? [y/N]: [2] edit_file
+Running tests...
+Tests: passed
+[3] run_tests
+[4] finish
+Running tests...
+Tests: passed
+Total tokens: 2630
+Elapsed time: 8.59s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

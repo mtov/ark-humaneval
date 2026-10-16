@@ -1,0 +1,54 @@
+[request]
+Implement rounded_avg in src/solution.py according to its docstring.
+
+[response 1]
+thought: I’ll inspect the workspace files to locate the function and its docstring.
+action: list_files .
+
+[response 2]
+thought: I’ll read the implementation file to see the docstring and current code.
+action: read_file src/solution.py
+
+[response 3]
+thought: The inclusive range average is `(n + m) / 2`; Python’s `round` gives the expected result for the examples, including the half-integer case.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -10,4 +10,6 @@
+     rounded_avg(10, 20) => "0b1111"
+     rounded_avg(20, 33) => "0b11010"
+     """
+-    pass
++    if n > m:
++        return -1
++    return bin(round((n + m) / 2))
+
+
+[response 4]
+thought: The implementation edit was applied; I’ll run the tests to validate it.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 5]
+thought: The implementation has been applied and the tests pass.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 3469
+elapsed_seconds: 13.16
+tool_counts: list_files=1, read_file=1, edit_file=1, run_tests=2, finish=1
+

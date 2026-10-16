@@ -1,0 +1,56 @@
+[request]
+Implement correct_bracketing in src/solution.py according to its docstring.
+
+[response 1]
+thought: I’ll read the target file to check the function’s docstring and current implementation.
+action: read_file src/solution.py
+
+[response 2]
+thought: Track the balance of opening and closing brackets; reject any prefix that closes too early, and accept only if the final balance is zero.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -13,4 +13,12 @@
+     >>> correct_bracketing("><<>")
+     False
+     """
+-    pass
++    balance = 0
++    for bracket in brackets:
++        if bracket == "<":
++            balance += 1
++        else:
++            balance -= 1
++            if balance < 0:
++                return False
++    return balance == 0
+
+
+[response 3]
+thought: The implementation was already applied; run the tests to validate it.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 4]
+thought: The implementation was applied and the test suite passed.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 2630
+elapsed_seconds: 8.59
+tool_counts: read_file=1, edit_file=1, run_tests=2, finish=1
+

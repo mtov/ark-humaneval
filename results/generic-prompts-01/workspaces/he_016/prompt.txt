@@ -1,0 +1,1 @@
+Implement count_distinct_characters in src/solution.py according to its docstring.

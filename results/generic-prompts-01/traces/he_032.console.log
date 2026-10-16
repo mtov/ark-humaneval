@@ -1,0 +1,55 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Implement find_zero in src/solution.py according to its docstring.
+[1] list_files .
+[2] read_file solution.py
+[3] list_files tests
+[4] read_file test_solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -21,4 +21,30 @@
+     >>> round(find_zero([-6, 11, -6, 1]), 2) # (x - 1) * (x - 2) * (x - 3) = -6 + 11x - 6x^2 + x^3
+     1.0
+     """
+-    pass
++    radius = 1.0
++    while True:
++        left = -radius
++        right = radius
++        f_left = poly(xs, left)
++        f_right = poly(xs, right)
++        if f_left == 0:
++            return left
++        if f_right == 0:
++            return right
++        if (f_left < 0) != (f_right < 0):
++            break
++        radius *= 2.0
++
++    for _ in range(100):
++        middle = (left + right) / 2.0
++        f_middle = poly(xs, middle)
++        if f_middle == 0:
++            return middle
++        if (f_left < 0) != (f_middle < 0):
++            right = middle
++            f_right = f_middle
++        else:
++            left = middle
++            f_left = f_middle
++
++    return (left + right) / 2.0
+Authorize edit? [y/N]: [5] edit_file
+Running tests...
+Tests: passed
+[6] run_tests
+[7] finish
+Running tests...
+Tests: passed
+Total tokens: 6154
+Elapsed time: 20.45s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

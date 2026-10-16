@@ -1,0 +1,29 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Implement rounded_avg in src/solution.py according to its docstring.
+[1] list_files .
+[2] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -10,4 +10,6 @@
+     rounded_avg(10, 20) => "0b1111"
+     rounded_avg(20, 33) => "0b11010"
+     """
+-    pass
++    if n > m:
++        return -1
++    return bin(round((n + m) / 2))
+Authorize edit? [y/N]: [3] edit_file
+Running tests...
+Tests: passed
+[4] run_tests
+[5] finish
+Running tests...
+Tests: passed
+Total tokens: 3469
+Elapsed time: 13.16s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

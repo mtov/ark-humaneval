@@ -1,0 +1,1 @@
+Implement choose_num in src/solution.py according to its docstring.

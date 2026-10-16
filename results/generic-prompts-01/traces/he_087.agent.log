@@ -1,0 +1,54 @@
+[request]
+Implement get_row in src/solution.py according to its docstring.
+
+[response 1]
+thought: I’ll read the target file to check the docstring and surrounding code.
+action: read_file src/solution.py
+
+[response 2]
+thought: The function should collect every matching column index, then order results by row ascending and column descending.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -19,4 +19,10 @@
+     get_row([], 1) == []
+     get_row([[], [1], [1, 2, 3]], 3) == [(2, 2)]
+     """
+-    pass
++    coordinates = [
++        (row_index, column_index)
++        for row_index, row in enumerate(lst)
++        for column_index, value in enumerate(row)
++        if value == x
++    ]
++    return sorted(coordinates, key=lambda coordinate: (coordinate[0], -coordinate[1]))
+
+
+[response 3]
+thought: The implementation was applied; run the tests to validate it against the docstring.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 4]
+thought: The implementation was updated and the tests passed.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 3168
+elapsed_seconds: 13.19
+tool_counts: read_file=1, edit_file=1, run_tests=2, finish=1
+

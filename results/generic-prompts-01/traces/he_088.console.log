@@ -1,0 +1,30 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Implement sort_array in src/solution.py according to its docstring.
+[1] list_files src/solution.py
+[2] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -14,4 +14,7 @@
+     * sort_array([2, 4, 3, 0, 1, 5]) => [0, 1, 2, 3, 4, 5]
+     * sort_array([2, 4, 3, 0, 1, 5, 6]) => [6, 5, 4, 3, 2, 1, 0]
+     """
+-    pass
++    if not array:
++        return []
++
++    return sorted(array, reverse=(array[0] + array[-1]) % 2 == 0)
+Authorize edit? [y/N]: [3] edit_file
+Running tests...
+Tests: passed
+[4] run_tests
+[5] finish
+Running tests...
+Tests: passed
+Total tokens: 3693
+Elapsed time: 15.91s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

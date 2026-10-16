@@ -1,0 +1,34 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Implement is_prime in src/solution.py according to its docstring.
+[1] list_files src/solution.py
+[2] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -17,4 +17,11 @@
+     >>> is_prime(1)
+     False
+     """
+-    pass
++    if n < 2:
++        return False
++    divisor = 2
++    while divisor * divisor <= n:
++        if n % divisor == 0:
++            return False
++        divisor += 1
++    return True
+Authorize edit? [y/N]: [3] edit_file
+Running tests...
+Tests: passed
+[4] run_tests
+[5] finish
+Running tests...
+Tests: passed
+Total tokens: 3631
+Elapsed time: 12.88s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

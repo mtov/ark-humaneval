@@ -1,0 +1,1 @@
+Implement tri in src/solution.py according to its docstring.

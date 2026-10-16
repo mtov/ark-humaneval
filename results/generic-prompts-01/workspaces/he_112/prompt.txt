@@ -1,0 +1,1 @@
+Implement reverse_delete in src/solution.py according to its docstring.

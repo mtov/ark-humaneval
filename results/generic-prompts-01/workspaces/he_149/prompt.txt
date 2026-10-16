@@ -1,0 +1,1 @@
+Implement sorted_list_sum in src/solution.py according to its docstring.

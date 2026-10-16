@@ -1,0 +1,32 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Implement get_row in src/solution.py according to its docstring.
+[1] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -19,4 +19,10 @@
+     get_row([], 1) == []
+     get_row([[], [1], [1, 2, 3]], 3) == [(2, 2)]
+     """
+-    pass
++    coordinates = [
++        (row_index, column_index)
++        for row_index, row in enumerate(lst)
++        for column_index, value in enumerate(row)
++        if value == x
++    ]
++    return sorted(coordinates, key=lambda coordinate: (coordinate[0], -coordinate[1]))
+Authorize edit? [y/N]: [2] edit_file
+Running tests...
+Tests: passed
+[3] run_tests
+[4] finish
+Running tests...
+Tests: passed
+Total tokens: 3168
+Elapsed time: 13.19s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

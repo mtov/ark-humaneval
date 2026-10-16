@@ -1,0 +1,35 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Implement largest_prime_factor in src/solution.py according to its docstring.
+[1] list_files blank
+[2] list_files .
+[3] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -7,4 +7,11 @@
+     >>> largest_prime_factor(2048)
+     2
+     """
+-    pass
++    largest = 1
++    factor = 2
++    while factor * factor <= n:
++        while n % factor == 0:
++            largest = factor
++            n //= factor
++        factor += 1
++    return n if n > 1 else largest
+Authorize edit? [y/N]: [4] edit_file
+Running tests...
+Tests: passed
+[5] run_tests
+[6] finish
+Running tests...
+Tests: passed
+Total tokens: 4114
+Elapsed time: 14.66s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

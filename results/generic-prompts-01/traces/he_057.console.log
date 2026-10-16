@@ -1,0 +1,30 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Implement monotonic in src/solution.py according to its docstring.
+[1] list_files .
+[2] read_file solution.py
+[3] list_files tests
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -9,4 +9,6 @@
+     >>> monotonic([4, 1, 0, -10])
+     True
+     """
+-    pass
++    return all(l[i] <= l[i + 1] for i in range(len(l) - 1)) or all(
++        l[i] >= l[i + 1] for i in range(len(l) - 1)
++    )
+Authorize edit? [y/N]: [4] edit_file
+Running tests...
+Tests: passed
+[5] run_tests
+[6] finish
+Running tests...
+Tests: passed
+Total tokens: 3931
+Elapsed time: 12.27s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

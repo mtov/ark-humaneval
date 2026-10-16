@@ -1,0 +1,55 @@
+[request]
+Implement sort_array in src/solution.py according to its docstring.
+
+[response 1]
+thought: I’ll inspect the solution file and its docstring.
+action: list_files src/solution.py
+
+[response 2]
+thought: I need to read the function and its docstring before implementing it.
+action: read_file src/solution.py
+
+[response 3]
+thought: Implement a sorted copy, choosing ascending or descending order from the sum of the original endpoints; handle an empty array without indexing it.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -14,4 +14,7 @@
+     * sort_array([2, 4, 3, 0, 1, 5]) => [0, 1, 2, 3, 4, 5]
+     * sort_array([2, 4, 3, 0, 1, 5, 6]) => [6, 5, 4, 3, 2, 1, 0]
+     """
+-    pass
++    if not array:
++        return []
++
++    return sorted(array, reverse=(array[0] + array[-1]) % 2 == 0)
+
+
+[response 4]
+thought: The implementation edit was applied; run the tests to validate it.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 5]
+thought: The implementation was applied and the tests passed.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 3693
+elapsed_seconds: 15.91
+tool_counts: list_files=1, read_file=1, edit_file=1, run_tests=2, finish=1
+

@@ -1,0 +1,32 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Implement rolling_max in src/solution.py according to its docstring.
+[1] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -7,4 +7,10 @@
+     >>> rolling_max([1, 2, 3, 2, 3, 4, 2])
+     [1, 2, 3, 3, 3, 4, 4]
+     """
+-    pass
++    result = []
++    maximum = None
++    for number in numbers:
++        if maximum is None or number > maximum:
++            maximum = number
++        result.append(maximum)
++    return result
+Authorize edit? [y/N]: [2] edit_file
+Running tests...
+Tests: passed
+[3] run_tests
+[4] finish
+Running tests...
+Tests: passed
+Total tokens: 2773
+Elapsed time: 11.22s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

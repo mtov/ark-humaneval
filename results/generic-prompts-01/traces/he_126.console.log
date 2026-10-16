@@ -1,0 +1,35 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Implement is_sorted in src/solution.py according to its docstring.
+[1] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -15,4 +15,13 @@
+     is_sorted([1, 2, 2, 3, 3, 4]) ➞ True
+     is_sorted([1, 2, 2, 2, 3, 4]) ➞ False
+     '''
+-    pass
++    counts = {}
++    previous = None
++    for number in lst:
++        if previous is not None and number < previous:
++            return False
++        counts[number] = counts.get(number, 0) + 1
++        if counts[number] > 2:
++            return False
++        previous = number
++    return True
+Authorize edit? [y/N]: [2] edit_file
+Running tests...
+Tests: passed
+[3] run_tests
+[4] finish
+Running tests...
+Tests: passed
+Total tokens: 3121
+Elapsed time: 14.83s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

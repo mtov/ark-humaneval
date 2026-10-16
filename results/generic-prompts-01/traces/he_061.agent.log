@@ -1,0 +1,56 @@
+[request]
+Implement correct_bracketing in src/solution.py according to its docstring.
+
+[response 1]
+thought: I need to read the target file and its docstring before implementing the function.
+action: read_file src/solution.py
+
+[response 2]
+thought: Track bracket depth, reject an unmatched closing bracket immediately, and accept only if no opening brackets remain.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -13,4 +13,12 @@
+     >>> correct_bracketing(")(()")
+     False
+     """
+-    pass
++    depth = 0
++    for bracket in brackets:
++        if bracket == "(":
++            depth += 1
++        else:
++            depth -= 1
++            if depth < 0:
++                return False
++    return depth == 0
+
+
+[response 3]
+thought: The implementation edit was applied; run the tests to validate the behavior.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 4]
+thought: The implementation was edited and the tests passed.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 2879
+elapsed_seconds: 11.38
+tool_counts: read_file=1, edit_file=1, run_tests=2, finish=1
+

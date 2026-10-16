@@ -1,0 +1,1 @@
+Implement iscube in src/solution.py according to its docstring.

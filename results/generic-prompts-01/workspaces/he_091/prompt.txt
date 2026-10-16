@@ -1,0 +1,1 @@
+Implement is_bored in src/solution.py according to its docstring.

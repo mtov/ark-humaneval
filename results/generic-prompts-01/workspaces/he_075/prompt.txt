@@ -1,0 +1,1 @@
+Implement is_multiply_prime in src/solution.py according to its docstring.

@@ -1,0 +1,35 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Implement file_name_check in src/solution.py according to its docstring.
+[1] list_files src/solution.py
+[2] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -13,4 +13,15 @@
+     file_name_check("example.txt") # => 'Yes'
+     file_name_check("1example.dll") # => 'No' (the name should start with a latin alphapet letter)
+     """
+-    pass
++    if file_name.count(".") != 1:
++        return "No"
++
++    name, extension = file_name.split(".")
++    if not name or name[0] not in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ":
++        return "No"
++    if extension not in {"txt", "exe", "dll"}:
++        return "No"
++    if sum(char in "0123456789" for char in file_name) > 3:
++        return "No"
++
++    return "Yes"
+Authorize edit? [y/N]: [3] edit_file
+[4] finish
+Running tests...
+Tests: passed
+Total tokens: 3477
+Elapsed time: 17.32s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

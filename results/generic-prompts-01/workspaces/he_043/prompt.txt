@@ -1,0 +1,1 @@
+Implement pairs_sum_to_zero in src/solution.py according to its docstring.

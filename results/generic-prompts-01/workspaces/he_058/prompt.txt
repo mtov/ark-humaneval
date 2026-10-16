@@ -1,0 +1,1 @@
+Implement common in src/solution.py according to its docstring.

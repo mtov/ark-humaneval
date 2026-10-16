@@ -1,0 +1,31 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Implement encode in src/solution.py according to its docstring.
+[1] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -13,4 +13,12 @@
+     >>> encode('This is a message')
+     'tHKS KS C MGSSCGG'
+     """
+-    pass
++    vowels = {'a': 'c', 'e': 'g', 'i': 'k', 'o': 'q', 'u': 'w'}
++    encoded = []
++    for char in message:
++        swapped = char.swapcase()
++        replacement = vowels.get(swapped.lower())
++        if replacement:
++            swapped = replacement.upper() if swapped.isupper() else replacement
++        encoded.append(swapped)
++    return ''.join(encoded)
+Authorize edit? [y/N]: [2] edit_file
+[3] finish
+Running tests...
+Tests: passed
+Total tokens: 2271
+Elapsed time: 11.77s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

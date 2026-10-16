@@ -1,0 +1,1 @@
+Implement sum_squares in src/solution.py according to its docstring.

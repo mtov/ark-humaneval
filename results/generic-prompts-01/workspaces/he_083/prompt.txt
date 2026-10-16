@@ -1,0 +1,1 @@
+Implement starts_one_ends in src/solution.py according to its docstring.

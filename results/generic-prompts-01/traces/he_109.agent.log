@@ -1,0 +1,56 @@
+[request]
+Implement move_one_ball in src/solution.py according to its docstring.
+
+[response 1]
+thought: I’ll inspect the solution file and its docstring before implementing the function.
+action: list_files src/solution.py
+
+[response 2]
+thought: I need to inspect the function and its docstring before implementing it.
+action: read_file src/solution.py
+
+[response 3]
+thought: The array is a sorted rotation exactly when it has at most one adjacent descent; the empty array also qualifies.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -26,4 +26,8 @@
+                 array by performing any number of right shift operations.
+                 
+     """
+-    pass
++    if not arr:
++        return True
++
++    descents = sum(arr[i] > arr[i + 1] for i in range(len(arr) - 1))
++    return descents <= 1
+
+
+[response 4]
+thought: The implementation edit has already been applied; run the tests to validate it.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 5]
+thought: The implementation was applied and the test suite passed.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 4134
+elapsed_seconds: 13.99
+tool_counts: list_files=1, read_file=1, edit_file=1, run_tests=2, finish=1
+

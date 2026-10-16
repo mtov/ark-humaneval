@@ -1,0 +1,60 @@
+[request]
+Implement intersection in src/solution.py according to its docstring.
+
+[response 1]
+thought: I’ll read the solution file and its docstring before implementing the requested behavior.
+action: read_file src/solution.py
+
+[response 2]
+thought: The intersection length is the difference between the smaller end and larger start; return "YES" only when that length is prime.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -19,4 +19,16 @@
+     intersection((-1, 1), (0, 4)) ==> "NO"
+     intersection((-3, -1), (-5, 5)) ==> "YES"
+     """
+-    pass
++    start = max(interval1[0], interval2[0])
++    end = min(interval1[1], interval2[1])
++    if start > end:
++        return "NO"
++
++    length = end - start
++    if length < 2:
++        return "NO"
++
++    for divisor in range(2, int(length ** 0.5) + 1):
++        if length % divisor == 0:
++            return "NO"
++    return "YES"
+
+
+[response 3]
+thought: The implementation has been edited; I’ll run the tests to check it.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 4]
+thought: The implementation has been applied and the tests pass.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 3390
+elapsed_seconds: 15.79
+tool_counts: read_file=1, edit_file=1, run_tests=2, finish=1
+

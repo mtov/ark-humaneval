@@ -1,0 +1,47 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Implement valid_date in src/solution.py according to its docstring.
+[1] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -19,4 +19,25 @@
+ 
+     valid_date('06/04/2020') => False
+     """
+-    pass
++    if not isinstance(date, str) or len(date) != 10:
++        return False
++
++    if date[2] != "-" or date[5] != "-":
++        return False
++
++    month_text, day_text, year_text = date[:2], date[3:5], date[6:]
++    if not (month_text.isdigit() and day_text.isdigit() and year_text.isdigit()):
++        return False
++
++    month = int(month_text)
++    day = int(day_text)
++
++    if month < 1 or month > 12:
++        return False
++
++    days_in_month = {
++        1: 31, 2: 29, 3: 31, 4: 30, 5: 31, 6: 30,
++        7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31
++    }
++
++    return 1 <= day <= days_in_month[month]
+Authorize edit? [y/N]: [2] edit_file
+Running tests...
+Tests: passed
+[3] run_tests
+[4] finish
+Running tests...
+Tests: passed
+Total tokens: 3308
+Elapsed time: 11.34s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

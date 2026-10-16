@@ -1,0 +1,1 @@
+Implement is_palindrome in src/solution.py according to its docstring.

@@ -1,0 +1,40 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Implement is_multiply_prime in src/solution.py according to its docstring.
+[1] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -7,4 +7,18 @@
+     is_multiply_prime(30) == True
+     30 = 2 * 3 * 5
+     """
+-    pass
++    factor_count = 0
++    divisor = 2
++
++    while divisor * divisor <= a:
++        while a % divisor == 0:
++            factor_count += 1
++            a //= divisor
++            if factor_count > 3:
++                return False
++        divisor += 1
++
++    if a > 1:
++        factor_count += 1
++
++    return factor_count == 3
+Authorize edit? [y/N]: [2] edit_file
+Running tests...
+Tests: passed
+[3] run_tests
+[4] finish
+Running tests...
+Tests: passed
+Total tokens: 2859
+Elapsed time: 12.62s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

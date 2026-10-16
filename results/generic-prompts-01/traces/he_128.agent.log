@@ -1,0 +1,66 @@
+[request]
+Implement prod_signs in src/solution.py according to its docstring.
+
+[response 1]
+thought: I’ll read the solution file to check the `prod_signs` docstring and surrounding code.
+action: read_file src/solution.py
+
+[response 2]
+thought: Return `None` for an empty array; otherwise multiply the signs and apply that product to the sum of magnitudes.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -11,4 +11,18 @@
+     >>> prod_signs([0, 1]) == 0
+     >>> prod_signs([]) == None
+     """
+-    pass
++    if not arr:
++        return None
++
++    sign_product = 1
++    magnitude_sum = 0
++    for number in arr:
++        magnitude_sum += abs(number)
++        if number > 0:
++            sign_product *= 1
++        elif number < 0:
++            sign_product *= -1
++        else:
++            sign_product *= 0
++
++    return magnitude_sum * sign_product
+
+
+[response 3]
+thought: I need to inspect the current implementation after the earlier edit.
+action: read_file src/solution.py
+
+[response 4]
+thought: The implementation matches the docstring; run the tests to validate it.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 5]
+thought: The implementation matches the docstring, and the tests pass.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 3944
+elapsed_seconds: 17.66
+tool_counts: read_file=2, edit_file=1, run_tests=2, finish=1
+

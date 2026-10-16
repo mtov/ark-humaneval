@@ -1,0 +1,1 @@
+Implement check_if_last_char_is_a_letter in src/solution.py according to its docstring.
