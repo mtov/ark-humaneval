@@ -1,13 +1,1 @@
-Complete the implementation of the function `filter_integers` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
-
-from typing import List, Any
-
-
-def filter_integers(values: List[Any]) -> List[int]:
-    """ Filter given list of any python values only for integers
-    >>> filter_integers(['a', 3.14, 5])
-    [5]
-    >>> filter_integers([1, 2, 3, 'abc', {}, []])
-    [1, 2, 3]
-    """
-
+Implement filter_integers in src/solution.py according to its docstring.

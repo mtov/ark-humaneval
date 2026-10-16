@@ -3,6 +3,28 @@
 Run the 164 tasks included in this project using the Ark code and configuration
 in `../ark`. Supports macOS and Linux with Python 3.11 or later.
 
+## Task Prompt Format
+
+Each `prompt.txt` contains a single instruction naming the target function and
+its source file. For example, `he_032/prompt.txt` contains:
+
+```text
+Implement find_zero in src/solution.py according to its docstring.
+```
+
+The prompt does not repeat the source code, specification, examples, or test
+instructions. Ark reads the function and its specification from `src/solution.py`.
+Source files, helper functions, specification text, and tests are unchanged.
+In `he_115`, the existing specification string follows a local import, so Python
+does not expose it as `__doc__`; the text remains available in the function body.
+
+The previous evaluations in `results/piloto-real/` and `results/avaliacao-01/`
+used prompts that included source code. Their artifacts and manifests are
+preserved. **Use a new run name for the generic prompts**: the old runs cannot
+be resumed with changed task files. The examples below use
+`generic-prompts-pilot` and `generic-prompts-01` to keep the new evaluations
+separate from the previous results.
+
 ## How to Run the Benchmark
 
 Run the following commands in a terminal from this project's root directory.
@@ -56,21 +78,21 @@ not verify whether the key is valid or whether the API provides access to the mo
 ### 4. Run One Task as a Pilot
 
 ```bash
-../ark/.venv/bin/python run_benchmark.py --run-name piloto-real --task he_000
+../ark/.venv/bin/python run_benchmark.py --run-name generic-prompts-pilot --task he_000
 ```
 
 This command makes real model requests. Wait for the task to finish.
 A successful pilot reports `PASS` and a `1/1 PASS` summary.
-Results are saved in `results/piloto-real/`.
+Results are saved in `results/generic-prompts-pilot/`.
 
 If the task reports `ERROR`, `FAIL`, or `TIMEOUT`, inspect the CSV and the files in
-`results/piloto-real/traces/` before starting the full run. To repeat the pilot
-after a failure has been recorded, choose another name, such as `piloto-real-02`.
+`results/generic-prompts-pilot/traces/` before starting the full run. To repeat the pilot
+after a failure has been recorded, choose another name, such as `generic-prompts-pilot-02`.
 
 ### 5. Run All 164 Tasks
 
 ```bash
-../ark/.venv/bin/python run_benchmark.py --run-name avaliacao-01
+../ark/.venv/bin/python run_benchmark.py --run-name generic-prompts-01
 ```
 
 **This command runs the full benchmark.** Without `--task` or `--limit`, it
@@ -82,15 +104,15 @@ The terminal shows each task as it starts and its result when it finishes.
 Detailed logs are saved after the task runs; they are not streamed live.
 At the end, the terminal reports the number and proportion of tasks with `PASS`.
 
-The full run uses `results/avaliacao-01/`, separate from the pilot. To inspect
+The full run uses `results/generic-prompts-01/`, separate from the pilot. To inspect
 the CSV in another terminal, open this project's root directory and run:
 
 ```bash
-cat results/avaliacao-01/results.csv
+cat results/generic-prompts-01/results.csv
 ```
 
-Each task's final code is saved in `results/avaliacao-01/workspaces/`, and its
-logs are saved in `results/avaliacao-01/traces/`.
+Each task's final code is saved in `results/generic-prompts-01/workspaces/`, and its
+logs are saved in `results/generic-prompts-01/traces/`.
 
 ### 6. Stop or Resume a Run
 
@@ -98,7 +120,7 @@ To stop, press **Ctrl+C** in the terminal running the benchmark. To resume,
 set the API key in your terminal and repeat **the same command with the same options**:
 
 ```bash
-../ark/.venv/bin/python run_benchmark.py --run-name avaliacao-01
+../ark/.venv/bin/python run_benchmark.py --run-name generic-prompts-01
 ```
 
 Tasks already recorded in the CSV, including failures and timeouts, are skipped.
@@ -107,7 +129,7 @@ A task interrupted by Ctrl+C remains pending and will run again.
 To start a new evaluation from scratch, choose another name:
 
 ```bash
-../ark/.venv/bin/python run_benchmark.py --run-name avaliacao-02
+../ark/.venv/bin/python run_benchmark.py --run-name generic-prompts-02
 ```
 
 Keep Ark, the tasks, and the options unchanged when resuming a run.
@@ -239,7 +261,7 @@ and `encode_shift` were added, respectively. The assertions were preserved.
 To manually check a saved solution, start from the project root:
 
 ```bash
-cd results/avaliacao-01/workspaces/he_000
+cd results/generic-prompts-01/workspaces/he_000
 ../../../../../ark/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_solution.py
 ```
 

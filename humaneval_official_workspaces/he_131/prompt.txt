@@ -1,12 +1,1 @@
-Complete the implementation of the function `digits` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
-
-
-def digits(n):
-    """Given a positive integer n, return the product of the odd digits.
-    Return 0 if all digits are even.
-    For example:
-    digits(1)  == 1
-    digits(4)  == 0
-    digits(235) == 15
-    """
-
+Implement digits in src/solution.py according to its docstring.

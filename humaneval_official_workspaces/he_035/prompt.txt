@@ -1,12 +1,1 @@
-Complete the implementation of the function `max_element` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
-
-
-
-def max_element(l: list):
-    """Return maximum element in the list.
-    >>> max_element([1, 2, 3])
-    3
-    >>> max_element([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])
-    123
-    """
-
+Implement max_element in src/solution.py according to its docstring.

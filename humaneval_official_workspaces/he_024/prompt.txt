@@ -1,10 +1,1 @@
-Complete the implementation of the function `largest_divisor` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
-
-
-
-def largest_divisor(n: int) -> int:
-    """ For a given number n, find the largest number that divides n evenly, smaller than n
-    >>> largest_divisor(15)
-    5
-    """
-
+Implement largest_divisor in src/solution.py according to its docstring.

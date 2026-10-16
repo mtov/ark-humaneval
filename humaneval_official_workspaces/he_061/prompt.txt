@@ -1,18 +1,1 @@
-Complete the implementation of the function `correct_bracketing` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
-
-
-
-def correct_bracketing(brackets: str):
-    """ brackets is a string of "(" and ")".
-    return True if every opening bracket has a corresponding closing bracket.
-
-    >>> correct_bracketing("(")
-    False
-    >>> correct_bracketing("()")
-    True
-    >>> correct_bracketing("(()())")
-    True
-    >>> correct_bracketing(")(()")
-    False
-    """
-
+Implement correct_bracketing in src/solution.py according to its docstring.
