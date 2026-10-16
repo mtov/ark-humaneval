@@ -1,279 +1,279 @@
-# HumanEval com o Ark atual
+# HumanEval with the Current Ark
 
-Executa as 164 tarefas fornecidas neste projeto usando o código e a configuração
-do Ark em `../ark`. Compatível com macOS e Linux, com Python 3.11 ou superior.
+Run the 164 tasks included in this project using the Ark code and configuration
+in `../ark`. Supports macOS and Linux with Python 3.11 or later.
 
-## Como rodar o benchmark
+## How to Run the Benchmark
 
-Os comandos abaixo devem ser executados no terminal, na raiz deste projeto.
-O projeto espera esta organização de diretórios:
+Run the following commands in a terminal from this project's root directory.
+The project expects this directory layout:
 
 ```text
 ark-project/
-├── ark/              # Seu Ark atual, com config/ e .venv/
-└── human-eval-all/    # Este projeto
+├── ark/              # Your current Ark checkout, including config/ and .venv/
+└── human-eval-all/    # This project
 ```
 
-### 1. Entre na pasta do projeto
+### 1. Open the Project Directory
 
-Nesta máquina:
+On this machine:
 
 ```bash
 cd /Users/mtov/ark-project/human-eval-all
 ```
 
-O executor usa automaticamente `../ark/.venv/bin/python`. Você não precisa
-ativar o ambiente virtual nem instalar uma segunda cópia do Ark neste projeto.
-Se o ambiente do Ark ainda não existir, siga a seção [Preparação do ambiente](#preparação-do-ambiente).
+The runner automatically uses `../ark/.venv/bin/python`. You do not need to
+activate the virtual environment or install a second copy of Ark in this project.
+If Ark's environment does not exist yet, follow [Environment Setup](#environment-setup).
 
-### 2. Configure a chave no terminal
+### 2. Set the API Key in Your Terminal
 
-Na configuração atual, a chave é lida de `OPENAI_API_KEY`:
+The current configuration reads the key from `OPENAI_API_KEY`:
 
 ```bash
-export OPENAI_API_KEY="sua-chave"
+export OPENAI_API_KEY="your-api-key"
 ```
 
-Substitua `sua-chave` pela sua chave real. O comando vale para esse terminal e
-seus processos; execute-o novamente se abrir outro terminal para iniciar o benchmark.
+Replace `your-api-key` with your actual key. This setting applies to the current
+terminal and its child processes. Set it again if you open another terminal to
+start the benchmark.
 
-O modelo e o endpoint são os definidos em `../ark/config/config.json`.
-O prompt de sistema vem de `../ark/config/system_prompt.txt`. O executor copia
-essa configuração no início de cada rodada; ajuste-a antes de começar.
+The model and endpoint are defined in `../ark/config/config.json`.
+The system prompt comes from `../ark/config/system_prompt.txt`. The runner copies
+this configuration at the start of each run, so make any changes before starting.
 
-### 3. Confira o ambiente
+### 3. Check the Environment
 
 ```bash
 ../ark/.venv/bin/python run_benchmark.py --check
 ```
 
-A saída deve identificar seu Ark, o Python, o modelo configurado, **164 tarefas**
-e a chave como **presente**. Este comando não faz chamadas à API nem cria
-resultados. Ele valida os arquivos e a configuração local, mas não confirma a
-validade da chave ou o acesso ao modelo na API.
+The output should identify your Ark checkout, Python, the configured model,
+**164 tasks**, and the key as **present** (`presente`). This command does not call
+the API or create results. It validates local files and configuration, but does
+not verify whether the key is valid or whether the API provides access to the model.
 
-### 4. Rode uma tarefa como piloto
+### 4. Run One Task as a Pilot
 
 ```bash
 ../ark/.venv/bin/python run_benchmark.py --run-name piloto-real --task he_000
 ```
 
-Este comando já faz chamadas reais ao modelo. Aguarde o resultado da tarefa.
-O esperado para um piloto bem-sucedido é `PASS` e o resumo `1/1 PASS`.
-Os resultados ficam em `results/piloto-real/`.
+This command makes real model requests. Wait for the task to finish.
+A successful pilot reports `PASS` and a `1/1 PASS` summary.
+Results are saved in `results/piloto-real/`.
 
-Se aparecer `ERROR`, `FAIL` ou `TIMEOUT`, consulte o CSV e os arquivos em
-`results/piloto-real/traces/` antes de iniciar a rodada completa. Para repetir
-esse piloto após uma falha já registrada, use outro nome, como `piloto-real-02`.
+If the task reports `ERROR`, `FAIL`, or `TIMEOUT`, inspect the CSV and the files in
+`results/piloto-real/traces/` before starting the full run. To repeat the pilot
+after a failure has been recorded, choose another name, such as `piloto-real-02`.
 
-### 5. Execute as 164 tarefas
+### 5. Run All 164 Tasks
 
 ```bash
 ../ark/.venv/bin/python run_benchmark.py --run-name avaliacao-01
 ```
 
-**Esse é o comando para executar o benchmark completo.** Sem `--task` e sem
-`--limit`, ele seleciona as 164 tarefas, em sequência, de `he_000` a `he_163`.
-Não é necessário responder às confirmações de edição: o executor fornece `y`
-automaticamente. `ARK_AUTO_APPROVE` não é necessário.
+**This command runs the full benchmark.** Without `--task` or `--limit`, it
+selects all 164 tasks and runs them sequentially, from `he_000` to `he_163`.
+You do not need to respond to edit confirmations: the runner supplies `y`
+automatically. `ARK_AUTO_APPROVE` is not required.
 
-O terminal mostra cada tarefa iniciada e seu resultado ao terminar. Os logs
-detalhados são salvos após a execução da tarefa; não são transmitidos ao vivo.
-Ao final, o terminal informa a quantidade e a proporção de tarefas com `PASS`.
+The terminal shows each task as it starts and its result when it finishes.
+Detailed logs are saved after the task runs; they are not streamed live.
+At the end, the terminal reports the number and proportion of tasks with `PASS`.
 
-A rodada completa usa `results/avaliacao-01/`, separada do piloto. Para consultar
-o CSV em outro terminal, entre na raiz deste projeto e execute:
+The full run uses `results/avaliacao-01/`, separate from the pilot. To inspect
+the CSV in another terminal, open this project's root directory and run:
 
 ```bash
 cat results/avaliacao-01/results.csv
 ```
 
-O código final de cada tarefa fica em `results/avaliacao-01/workspaces/` e os
-logs em `results/avaliacao-01/traces/`.
+Each task's final code is saved in `results/avaliacao-01/workspaces/`, and its
+logs are saved in `results/avaliacao-01/traces/`.
 
-### 6. Interrompa ou retome, se necessário
+### 6. Stop or Resume a Run
 
-Para interromper, pressione **Ctrl+C** no terminal da execução. Para retomar,
-configure a chave no terminal e repita **o mesmo comando, com as mesmas opções**:
+To stop, press **Ctrl+C** in the terminal running the benchmark. To resume,
+set the API key in your terminal and repeat **the same command with the same options**:
 
 ```bash
 ../ark/.venv/bin/python run_benchmark.py --run-name avaliacao-01
 ```
 
-As tarefas já registradas no CSV, incluindo falhas e timeouts, são ignoradas.
-A tarefa interrompida por Ctrl+C fica pendente e será executada novamente.
+Tasks already recorded in the CSV, including failures and timeouts, are skipped.
+A task interrupted by Ctrl+C remains pending and will run again.
 
-Para fazer uma nova avaliação do zero, escolha outro nome:
+To start a new evaluation from scratch, choose another name:
 
 ```bash
 ../ark/.venv/bin/python run_benchmark.py --run-name avaliacao-02
 ```
 
-Mantenha o Ark, as tarefas e as opções inalterados para retomar a mesma rodada.
-Se você alterar o código/configuração do Ark, o executor, as tarefas, o ambiente
-ou os limites de tempo, use um novo nome de rodada.
+Keep Ark, the tasks, and the options unchanged when resuming a run.
+If you change Ark's code or configuration, the runner, the tasks, the environment,
+or the time limits, use a new run name.
 
-## Preparação do ambiente
+## Environment Setup
 
-**Se `../ark/.venv/bin/python` já funciona, não é necessário recriar o ambiente.**
-Caso ainda não exista, crie-o usando Python 3.11 ou superior, a partir da raiz
-deste projeto:
+**If `../ark/.venv/bin/python` already works, you do not need to recreate the environment.**
+If it does not exist yet, create it using Python 3.11 or later from this project's
+root directory:
 
 ```bash
 python3 -m venv ../ark/.venv
 ../ark/.venv/bin/python -m pip install -r ../ark/requirements.txt
 ```
 
-As tarefas já estão fornecidas. Você não precisa gerar os workspaces ou instalar
-o pacote `human_eval`.
+The tasks are already included. You do not need to generate the workspaces or
+install the `human_eval` package.
 
-## Outras opções de execução
+## Other Run Options
 
 ```bash
-# Executar somente as primeiras dez tarefas
+# Run only the first ten tasks
 ../ark/.venv/bin/python run_benchmark.py --run-name piloto-10 --limit 10
 
-# Selecionar tarefas específicas
+# Select specific tasks
 ../ark/.venv/bin/python run_benchmark.py --run-name selecao --task he_000 --task he_065
 
-# Aumentar os limites de tempo em uma nova rodada
+# Increase the time limits for a new run
 ../ark/.venv/bin/python run_benchmark.py --run-name avaliacao-longa --timeout 3600 --test-timeout 60
 
-# Conferir outro checkout ou ambiente Python
-python3 run_benchmark.py --ark-dir /caminho/ark --python /caminho/venv/bin/python --check
+# Check another checkout or Python environment
+python3 run_benchmark.py --ark-dir /path/to/ark --python /path/to/venv/bin/python --check
 
-# Consultar todas as opções
+# Show all options
 ../ark/.venv/bin/python run_benchmark.py --help
 ```
 
-| Opção | Função | Padrão |
+| Option | Purpose | Default |
 | --- | --- | --- |
-| `--run-name` | Nome da rodada; repita-o para retomar | Nome único com data/hora UTC |
-| `--task` | Executa uma tarefa; pode ser repetido | Todas as tarefas |
-| `--limit` | Seleciona somente as primeiras N tarefas | Sem limite |
-| `--timeout` | Limite total do processo do Ark por tarefa, em segundos | 1800 |
-| `--test-timeout` | Limite da avaliação externa por tarefa, em segundos | 30 |
-| `--ark-dir` | Diretório do código/configuração do Ark | `../ark` |
-| `--python` | Executável Python para o Ark e a avaliação | `<ark-dir>/.venv/bin/python` |
-| `--check` | Verifica o ambiente sem chamar a API | Desativado |
+| `--run-name` | Run name; reuse it to resume | Unique name with a UTC timestamp |
+| `--task` | Select one task; can be repeated | All tasks |
+| `--limit` | Select only the first N tasks | No limit |
+| `--timeout` | Total time limit for the Ark process per task, in seconds | 1800 |
+| `--test-timeout` | Time limit for external evaluation per task, in seconds | 30 |
+| `--ark-dir` | Directory containing Ark's code and configuration | `../ark` |
+| `--python` | Python executable for Ark and evaluation | `<ark-dir>/.venv/bin/python` |
+| `--check` | Check the environment without calling the API | Disabled |
 
-O timeout de cada requisição ao modelo continua sendo o definido no Ark.
-`--timeout` limita o tempo de **toda a execução do Ark na tarefa**, incluindo
-requisições e testes internos. Um timeout ou Ctrl+C encerra também os subprocessos
-da tarefa.
+The timeout for each model request remains the one configured in Ark.
+`--timeout` limits **the entire Ark run for a task**, including requests and
+internal tests. A timeout or Ctrl+C also terminates the task's child processes.
 
-## Se algo der errado
+## Troubleshooting
 
-| Situação | Como proceder |
+| Situation | What to do |
 | --- | --- |
-| `Defina a variável OPENAI_API_KEY` | Execute o `export` no mesmo terminal que iniciará o benchmark. |
-| Python ausente ou ambiente inválido | Siga a preparação do ambiente ou informe `--python`. |
-| Piloto com `ERROR` | Leia o log `.console.log` e o `.agent.log`, quando existir; confira a configuração do Ark e o acesso ao modelo. |
-| Tarefa com `FAIL` | Leia o `.pytest.log`; a solução foi reprovada na avaliação externa. |
-| Tarefa com `TIMEOUT` | Confira `error_type` no CSV para distinguir o limite do Ark do limite dos testes. |
-| Aviso de que Ark, tarefas, ambiente ou opções mudaram | Use outro `--run-name` para iniciar uma rodada com os dados atuais. |
-| Rodada já em execução | Aguarde ou interrompa o processo que usa aquele nome; use outro nome para uma rodada independente. |
+| `Defina a variável OPENAI_API_KEY` (set the OPENAI_API_KEY variable) | Run `export` in the same terminal that will start the benchmark. |
+| Missing Python executable or invalid environment | Follow the environment setup instructions or specify `--python`. |
+| Pilot reports `ERROR` | Read the `.console.log` and `.agent.log` files, when available; check Ark's configuration and model access. |
+| Task reports `FAIL` | Read the `.pytest.log` file; the solution failed external evaluation. |
+| Task reports `TIMEOUT` | Check `error_type` in the CSV to distinguish an Ark timeout from a test timeout. |
+| Message saying Ark, tasks, environment, or options have changed | Use a different `--run-name` to start a run with the current inputs. |
+| Run is already active | Wait for or stop the process using that name; use another name for an independent run. |
 
-## Isolamento e resultados
+## Isolation and Results
 
-Cada rodada recebe uma cópia do código Python e dos dois arquivos de configuração
-do Ark atual. Essa cópia executa em `results/<rodada>/runtime/`. Isso permite usar
-a versão atual sem sobrescrever `../ark/ark-workspace` ou `../ark/agent_trace.log`.
-Uma nova rodada captura novamente o conteúdo de `../ark`.
+Each run receives a copy of the current Ark Python code and its two configuration
+files. This copy runs in `results/<run-name>/runtime/`, allowing the runner to use
+the current version without overwriting `../ark/ark-workspace` or
+`../ark/agent_trace.log`. Each new run captures the contents of `../ark` again.
 
 ```text
 .
 ├── run_benchmark.py
-├── humaneval_official_workspaces/   # 164 tarefas originais
-├── tests/test_benchmark.py          # Testes locais do executor, sem API
-└── results/<rodada>/               # Gerado durante a execução
+├── humaneval_official_workspaces/   # 164 supplied tasks
+├── tests/test_benchmark.py          # Local runner tests; no API requests
+└── results/<run-name>/              # Generated during execution
     ├── manifest.json
     ├── results.csv
     ├── traces/
-    │   ├── he_000.console.log       # stdout e stderr do Ark
-    │   ├── he_000.agent.log         # Trace interno, quando produzido
-    │   └── he_000.pytest.log        # Avaliação externa, quando executada
-    ├── workspaces/he_000/           # Código final com testes originais
-    └── runtime/                    # Cópia executável do Ark
+    │   ├── he_000.console.log       # Ark stdout and stderr
+    │   ├── he_000.agent.log         # Internal trace, when produced
+    │   └── he_000.pytest.log        # External evaluation, when performed
+    ├── workspaces/he_000/           # Final code with the original tests
+    └── runtime/                    # Executable copy of Ark
 ```
 
-O manifesto registra caminhos, versões de Python/Pytest/cliente OpenAI, opções e
-hashes do executor, código/configuração do Ark e arquivos das tarefas selecionadas.
-Se esses dados mudarem, a retomada é recusada: escolha outro nome de rodada para
-evitar misturar versões. A chave de API não é gravada pelo executor. A configuração
-e os traces do Ark são copiados integralmente; eles podem conter dados do endpoint.
+The manifest records paths, Python/Pytest/OpenAI client versions, options, and
+hashes of the runner, Ark code and configuration, and selected task files.
+If these inputs change, resuming is rejected: choose another run name to avoid
+mixing versions. The runner does not record the API key. Ark's configuration and
+traces are copied in full and may contain endpoint information.
 
-O CSV é gravado a cada tarefa e contém:
+The CSV is saved after each task and contains:
 
-| Campo | Conteúdo |
+| Field | Contents |
 | --- | --- |
-| `task_id` | Identificador `he_000` a `he_163` |
-| `status` | `PASS`, `FAIL`, `ERROR` ou `TIMEOUT` |
-| `time_seconds` | Tempo do processo do Ark, sem a avaliação externa |
-| `tokens` | Total reportado pelo Ark; vazio se indisponível |
-| `turns` | Ações numeradas impressas no console |
-| `error_type` | Categoria do erro, quando houver |
-| `ark_exit_code` | Código de saída do processo do Ark |
-| `test_exit_code` | Código de saída da avaliação externa, quando executada |
+| `task_id` | Identifier from `he_000` to `he_163` |
+| `status` | `PASS`, `FAIL`, `ERROR`, or `TIMEOUT` |
+| `time_seconds` | Ark process duration, excluding external evaluation |
+| `tokens` | Total reported by Ark; empty if unavailable |
+| `turns` | Numbered actions printed to the console |
+| `error_type` | Error category, if any |
+| `ark_exit_code` | Ark process exit code |
+| `test_exit_code` | External evaluation exit code, when performed |
 
-A gravação substitui o CSV inteiro de forma atômica. A retomada valida o
-cabeçalho e cada registro; linhas incompletas, duplicadas ou inconsistentes
-interrompem a execução com uma mensagem, sem pular tarefas silenciosamente.
+Each save replaces the entire CSV atomically. Before resuming, the runner
+validates the header and every record. Incomplete, duplicate, or inconsistent
+rows stop execution with a message rather than silently skipping tasks.
 
-`PASS` exige saída zero do Ark e aprovação na avaliação externa. Erros de
-execução do Ark recebem `ERROR`; soluções reprovadas recebem `FAIL`. O comando
-retorna zero quando a rodada termina, mesmo se houver tarefas reprovadas; confira
-o resumo e o CSV. Erros do executor retornam 1; Ctrl+C retorna 130.
+`PASS` requires both a zero exit code from Ark and successful external evaluation.
+Ark execution errors receive `ERROR`; solutions that fail evaluation receive
+`FAIL`. The command returns zero when the run finishes, even if some tasks fail;
+check the summary and CSV. Runner errors return 1; Ctrl+C returns 130.
 
-A avaliação externa usa uma cópia dos **testes originais** e o diretório `src/`
-produzido pelo agente. Alterações do agente nos testes não entram nessa avaliação.
-Os arquivos de entrada são conferidos contra os hashes do manifesto antes de
-cada tarefa e depois de sua cópia. O Ark recebe essa cópia verificada. A execução
-não modifica as tarefas fornecidas. Os testes ficam visíveis ao agente
-durante a resolução; esta execução não representa uma avaliação com testes ocultos.
+External evaluation uses a copy of the **original tests** and the `src/` directory
+produced by the agent. Agent changes to the tests do not enter this evaluation.
+Input files are checked against the manifest hashes before each task and after
+copying. Ark receives this verified copy. Execution does not modify the supplied
+tasks. Tests remain visible to the agent while solving the task; this is not an
+evaluation with hidden tests.
 
-O empacotamento fornecido tinha imports incompletos nos testes de `he_032`,
-`he_038` e `he_050`. Foram acrescentados os imports das funções auxiliares `poly`,
-`encode_cyclic` e `encode_shift`, respectivamente. Os asserts foram preservados.
+The supplied task packaging had incomplete imports in the tests for `he_032`,
+`he_038`, and `he_050`. Imports for the helper functions `poly`, `encode_cyclic`,
+and `encode_shift` were added, respectively. The assertions were preserved.
 
-Para conferir manualmente uma solução salva, a partir da raiz do projeto:
+To manually check a saved solution, start from the project root:
 
 ```bash
 cd results/avaliacao-01/workspaces/he_000
 ../../../../../ark/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_solution.py
 ```
 
-## Testes do executor
+## Runner Tests
 
 ```bash
 ../ark/.venv/bin/python -m pytest -q -p no:cacheprovider tests
 ```
 
-Esses testes usam um agente simulado, sem chamadas ao modelo.
-O relatório da revisão detalhada está em [VERIFICACAO.md](VERIFICACAO.md).
+These tests use a simulated agent without making model requests.
+The detailed review report is available in [VERIFICACAO.md](VERIFICACAO.md) (in Portuguese).
 
-## Enviar os resultados ao GitHub
+## Uploading Results to GitHub
 
-O `.gitignore` permite versionar os artefatos de cada rodada: `results.csv`,
-`manifest.json`, `traces/` e `workspaces/`. As cópias de execução em `runtime/`,
-os locks e os caches continuam excluídos.
+The `.gitignore` allows tracking each run's artifacts: `results.csv`,
+`manifest.json`, `traces/`, and `workspaces/`. Runtime copies in `runtime/`,
+lock files, and caches remain excluded.
 
-Na criação inicial do repositório, `git add .` já inclui esses resultados.
-Para enviar novas avaliações depois que o repositório tiver sido criado e
-conectado ao GitHub, execute na raiz do projeto:
+When creating the repository, `git add .` already includes these results.
+To upload new evaluations after the repository has been created and connected
+to GitHub, run the following from the project root:
 
 ```bash
 git add .gitignore results/
 git status
-git commit -m "Adiciona resultados das avaliações do Ark"
+git commit -m "Add Ark evaluation results"
 git push
 ```
 
-## Limpeza realizada
+## Cleanup Performed
 
-Foram removidos o código duplicado `ark_latest/`, o ambiente Linux
-`venv_ark_latest/`, os resultados/traces/workspaces antigos e seus ZIPs. O antigo
-executor foi substituído por `run_benchmark.py`. O gerador de tarefas também foi
-removido: as 164 tarefas já estão fornecidas e sua execução não depende do pacote
-`human_eval`. Os repositórios Git internos das tarefas e caches dispensáveis foram
-removidos; prompts, fontes e testes foram preservados.
+The duplicate `ark_latest/` code, the Linux `venv_ark_latest/` environment,
+previous results, traces, workspaces, and their ZIP archives were removed.
+The old runner was replaced with `run_benchmark.py`. The task generator was also
+removed: all 164 tasks are already included, and running them does not require
+the `human_eval` package. Internal task Git repositories and unnecessary caches
+were removed; prompts, source files, and tests were preserved.
