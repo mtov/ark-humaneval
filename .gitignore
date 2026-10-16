@@ -4,6 +4,11 @@ results/*/*
 !results/*/results.csv
 !results/*/traces/
 !results/*/workspaces/
+evaluation_results/*/*
+!evaluation_results/*/manifest.json
+!evaluation_results/*/results.csv
+!evaluation_results/*/summary.json
+!evaluation_results/*/traces/
 __pycache__/
 .pytest_cache/
 *.pyc

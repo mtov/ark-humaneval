@@ -1,0 +1,1 @@
+{"task_id": "he_145", "status": "FAIL", "cases_total": 1003, "cases_checked": 1, "failure": {"type": "AssertionError", "case_index": 0, "arguments": "[[1, -1]]", "expected": "[-1, 1]", "actual": "[1, -1]"}}

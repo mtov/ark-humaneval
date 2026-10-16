@@ -1,0 +1,1820 @@
+{
+  "case_timeout": 2,
+  "evaluator_sha256": "e26d12593e109e44375fa4a7d218c5d972ce9926931374144b3400ccc6ccbbad",
+  "python": "/Users/mtov/ark-project/ark/.venv/bin/python",
+  "python_environment": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]\n9.1.1",
+  "schema_version": 1,
+  "source_files": {
+    "he_000": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "33c9ef8294337c640b9e9f1ff6c6c88b3ad395ad112aa1055bae256e3835af9f"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "88ca694aba07f54a8b4fa15cd6a8a7aa670c581134ebe778c96370ca59664d9a"
+      }
+    },
+    "he_001": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "f50b0d2e86ed5a10837f57cb72f77a3f8d2716d315978e7847fcecebbb2816f9"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "91f219b7aaac91a25c5e80b990f911b6f51c6952496031e5d0435b3c6d6b1fb7"
+      }
+    },
+    "he_002": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "9c55382aa649492555747a7296735f5a3597a5da0cce4e07565223a8196f3fe9"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "eb7cc84cc4349910b10cc524e462a14648d82485b9ba9667dc476441442e1a7d"
+      }
+    },
+    "he_003": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "7546bf95230f4fd61e72b48933c4a3a8c52ede9119d5fbea1aced81ccfabfc55"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "a426ae1d22987ed108aa4a3ab6ac3c42d43963a286fd6b089405fac9c7412120"
+      }
+    },
+    "he_004": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "2115be8418b86687f0e9a1676729a988daf2f78a1471d4057d6d5ae7fff825c9"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "a06e8a7a67e8833fca865762beea67352bb2d11822f7a553cb2a3ac64cd1c19e"
+      }
+    },
+    "he_005": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "cbb77897b50c7e4a2ab37e9d71a87dd60d0888838b6c4624328baa3b5eb67ff0"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "787f998b7e10529e385130bb451ccf533c48390037a59fa67b6e58633328ff3a"
+      }
+    },
+    "he_006": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "03b0738727dc53e5d5a99a068efb5a818c8f0cb8d10dcbb78603e25c781b6779"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "51413952aec5eb526656f0adb0bfc58d0937ffe79270d0ecf868e8cc84981be1"
+      }
+    },
+    "he_007": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "f9aa3cd9defd9f6e0c7a2892bff804678672c538c34021fc578f676f265427b2"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "75800aff8783ab192ad41776388248828ce63564365ddb6b0d2b2514a092a7b4"
+      }
+    },
+    "he_008": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "72561753b549a42a51e16df17af58dccb91c7091e1669945f35a16ee7747fd44"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "d7758f8d9947452e7532b450d5251a7c838bd11a8e331e0a363ba732adbf7de6"
+      }
+    },
+    "he_009": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "848d9d067b731eba01a52bde51eb1b0103363d893b9c7f8a2390696cda573036"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "2e14a475b300cf9485aa3264cb839d994b079f5a4735dcc6c10406280793b5c2"
+      }
+    },
+    "he_010": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "a78d69be4d917c8af88e98a8e5b0eeb302ca827ae1b06a7ca825dbf79aa77a88"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "8746e49553c37bb7bf41d44af0c719422d3fcccb334e1d269a0cd0fc1c07db73"
+      }
+    },
+    "he_011": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "c8ffb02238a7bd9f99efda799e9795bfacd837a3349907248ae211fca5500a1b"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "a1ac695ae08e684b0cd429a2785a15b12ebe99ad7c9d8ce963c3ea666784820a"
+      }
+    },
+    "he_012": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "52460ebcdf2296ef007a7dbc6971d549eda914d713d0394bdba997f1cdc730cb"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "fd3d129cb009351b50fe59649b1bea097cba3071cd2e3a390ef10c4a7955784d"
+      }
+    },
+    "he_013": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "4eb498cdd2e230d1852e24170811d089f838abb61738d1c92e7bc388f43df78e"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "301cea1a7c39135c674a5959c580841ed249e445d1ea44489e503642812c5b78"
+      }
+    },
+    "he_014": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "4e41f2db9d39ed81cafc8a6b0f24d336a74f551203b112c9490251549ace10ea"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "ee85666489e7d29b902e5ef20bc08724075d6e97ff16ede79562bb5d0c1fd3bf"
+      }
+    },
+    "he_015": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "c1dc4c5259355b01168241660929967c9171eb33ee638006a333fd3fe158fd2e"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "2733f2d0341dcc7e82fa8ea1ffcdfd6e92a34b3371cbff8573731530392ebfd1"
+      }
+    },
+    "he_016": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "920e1c18030d74d8d6f234a22b45de513c529a6d8b2707e8a794feb5cb207e1e"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "440f696e27f4d7fc200a077b1c36d9666768e30b774b3460279b1c096fd57470"
+      }
+    },
+    "he_017": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "9f48344bb3c31c1aa9c05c4b02735da56b3a893f91cc444a9bac4db03c8c7557"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "a4bf69d25d9d43677e90786b37825b7764f1b4977b2a9a4da4b7fd1de54c4485"
+      }
+    },
+    "he_018": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "52164937f89efae5bd91556042e2afebc73ffe1668616f149d7026e38cd71023"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "c74dfef3d0575053b51e48fd18d4b88acbac82ea089793d7dc311b747b8526e0"
+      }
+    },
+    "he_019": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "a173d3fcf034117a4e61852bc26aff9591d843d768a5b04b055445b635adef79"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "efcdd662187408719ffeadfc50fba3b2cd2576a61e604082c0aff77371cc298d"
+      }
+    },
+    "he_020": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "c59eb9455d20eef7954a97d00d2cd2677b25a3dbf1e60161c409832d3f240468"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "cb2a85277d06626a2cb2139a46683e45a5882e52c62d64640d4138b1dcbaf678"
+      }
+    },
+    "he_021": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "f29fef801118228fea72a084af2becaff85b21bd84a75995820a88187647b752"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "6491600d7d5d5b7c91db5c0a759fb343f084c766ac09978412029a4d3e739229"
+      }
+    },
+    "he_022": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "06d32356e5825630ba9d02a8ab989eb9b8ee64485f42f6e459d5721562064ad8"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "71f600d44b969a839154cf52b57ae24218d5a257a987edd6e337967067f00c49"
+      }
+    },
+    "he_023": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "5c2f053d94a2d552f553d678541c7b074fb8f97f14d3b9dced2204311781a67a"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "cc42e52b8f060a598c32c14dab001c0845b68ce36aadf38a19ba56cf8ec70824"
+      }
+    },
+    "he_024": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "7bc1cf1c290a3d58a07393637f86bbfa8395ac438525e42bb2d796fb52573d7e"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "7c5ee78fb3ef3c29cd12a5269b2bf3b6fd754a97497d3fe7ff94ed521fb7d9e3"
+      }
+    },
+    "he_025": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "247afc03e2f7a7dec603b59f433794e96d17a367c8ce6b8ebf4dd2e1cdc96653"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "9f34d028de069aa58ae0f02d6167eac12419c2882fc695675f77d6958677ea65"
+      }
+    },
+    "he_026": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "a521fdc29f0cbf238a5f99a6706c896052354a8591724b7a23f8b2c187385c7a"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "ddfa7bd8ede1a76260c57c78728dc20ad2a8a20445c9f590427cdf7fe9a19279"
+      }
+    },
+    "he_027": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "fa508946a76d82039a4cbee1d470837bf49795d24bcdd3ecd46a6c5cb25d8582"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "2387edc66193b2f8666f57218caf2b42d5df7841fb9808194496fb9775a698cc"
+      }
+    },
+    "he_028": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "6adee129d74e8fadb0bda08ffab73b5277437b7b98db5fd44b13a14a5dd74b79"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "21f917c9e88f47a75ff2ec78e35a52b64d6625e04ff32758ac1f162805ae047d"
+      }
+    },
+    "he_029": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "aa1d54f66687663add5b47cf53f12b9d0901360d552eae8013d6513a9aeb835c"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "6df237412c9042256911600efc01717f454d3cb59f071444c1a2019efa0ffc33"
+      }
+    },
+    "he_030": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "b16a2e629e5451781fa9a33bdaa69cf3fbb3a4d32abbf7986bad1c1a405d0ec8"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "f6a1b7dfb108422e161e24c1ba5e107eab07f9a99a866b049455578bf6562bab"
+      }
+    },
+    "he_031": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "3ed33d8d020456a36c1ea2a49310edf29fdd941c9d3faa4fde23a7f8418dc7d1"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "376302fc561627cbde0cb727561ba88e77d643e99446e5293926c6637e536938"
+      }
+    },
+    "he_032": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "842cf4ff1c7dd77f1f67aff002e0955c3cd44a35f380361ea5911dc3713084b5"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "6064257aad364522b4290c1f232df5847edb614a800227aa938d083d18b09eb1"
+      }
+    },
+    "he_033": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "e6fadc8187f44fb6fe3fec345eb858d2d932a30cec0b9159612e1e858d28ac58"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "d6e494724bd6a629423594d22393b7919fc108bfbc538138b8d4a8ccee4fafe5"
+      }
+    },
+    "he_034": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "b2d97dfb861d38f16b78d44744ad521584cf9f98e9f5c20899ca3e52f11bad2e"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "b28fdcc666d6126a9c7421c395744300e1b372885ea240f2a30d15c7f36f8f17"
+      }
+    },
+    "he_035": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "b87123ff2cee933a822c8f11f15101bd01ef455ab62fc1369798e9ec9fc1d02b"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "58fd3b32b9dff49bc26b2d297dc57c08d5064b5bdebba876211ae74538221232"
+      }
+    },
+    "he_036": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "0fd7c8a7490f31ef46fa873afbb54b4681c745a2ac105deca390a95d4571df39"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "993b22ca30b0f51b142f15a802a04c888ce7c685dda2489958740cb018dac591"
+      }
+    },
+    "he_037": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "16d64e940f29254ac794ec56033a338667302837f19ff6b7ae1880b4f72483b7"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "4d9ba6c6690f652fd5601100142500f1cce175ab27ae4fdedcb33dd4454edb3a"
+      }
+    },
+    "he_038": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "61f99ac52002c3d4ba63d416540e7f14f14cef7ceb5f0d122871d8fe92743794"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "0c51675e696e383a02c2e21f828cdb5eefb64f619677d74a7ef7426ab1af8587"
+      }
+    },
+    "he_039": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "12ad310813e7cca910bf744169da739b76d1b305d3860b2868fe13e4e3e8f0fa"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "4a0ab95ceb018f78edbc011c240f70bcc5f941fc1d501eefdece941195185742"
+      }
+    },
+    "he_040": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "a005b4d6b08defff0f02f80f5afdea1aa6560d0d4123a8995b9a4a9792c694d5"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "b6445cff3f048e623c811de195233c19842849d5e3a507a4247d7c5031d8cd56"
+      }
+    },
+    "he_041": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "a78b6dfec0941521008caebbab701bba77d91658bb4fe55080ee2e1c35be97c6"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "40db9648a87292ee0a5336f841d517df57f0ea2ced1c695df76ce843c1102520"
+      }
+    },
+    "he_042": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "3f52c679f53bf840cabe735e8fbfbb1a5ed229f3e982233b6110a586a476ebac"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "285e916da6a47b13e997513eaecf2d1c7bae5623d09fc118d0fe3b9cf02b9376"
+      }
+    },
+    "he_043": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "2f9cc984caa632087a49325b4f8d699c0ffec72d17ee88ebee4de32ba8b087d3"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "ab20485a0af617ec4006a759832887bca30c8d195e48de6e5eb9bc54cb54beb6"
+      }
+    },
+    "he_044": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "8b3e985f9839aab676771de2a733ae60f81685f821f240709329133d879ec226"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "2d1f481385641e07fa705069df85068d90c87fc05aecf3597c59b39dbe194ff8"
+      }
+    },
+    "he_045": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "6ab2a9b8f3bd2352c97ef273498aa8881244cfa711e261eacfd16136bc0ca71b"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "7658cfc4e0570afad51f882149abe661864346e0e03b074dfbbe2a62cef7ecf1"
+      }
+    },
+    "he_046": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "c1eefc7f8562b2cbc470b3d60619eb9eacd6bc4c1b0cc0aef529750734986dcc"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "f255d750c8c96678b8de746799644e6a244c6750ba7d1175307f1b4c852f7a3a"
+      }
+    },
+    "he_047": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "3729371e04091233b97dc38cb839210045670003c7fbe7252250aa8dd83fc91e"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "f5961e68557c45adcfc8675c376302e6ec313d473c4fdad5994fb3d3cf119d26"
+      }
+    },
+    "he_048": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "ec7d27acfa9b606682df7b29ebc69be24c881c3afaded76df351acbc55f24e5d"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "69fd2a4ce9b955b53f8a49d2462fc8815dd6592bf379ef929e0695a4c4665329"
+      }
+    },
+    "he_049": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "70736d958482204539aa1312cc775b51700d61c4df9e8fdb02e1ae1b45a955b3"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "68e14eb22f50813b61667039038ff91a28f69667bef84f29011122e6e509392d"
+      }
+    },
+    "he_050": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "04bf5789d5859d6e90453582d47fe3ebe11a0091164f07ae7db5cf7ee66591e0"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "e203762c42038ba6d1770b5621ad80739d7ec4fdd96108e0edcfa65ef6084f25"
+      }
+    },
+    "he_051": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "714738ee346066d2a866648cf1c0f78ec35840df32a6a1b4405eff715e25fb2a"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "eb1a5a99f9ff4a40f1f9a01c0aa6cff4028b97b16d7f2393881f7bdc6a552e51"
+      }
+    },
+    "he_052": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "1cb491078cce4b1d9ed0f1c37146461b642e3f68c7fd2e8b44c239874607d3e8"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "03d64bd3c6d41951db1e5dac7cc36fc93ee3415cfe3b212920eebc92fee2ea73"
+      }
+    },
+    "he_053": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "23393194b0d346cd658b4702214818f23217839ca7e017afb812b5f4e593f6eb"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "3397feea7ecdf1de035104fc2afc6022cf2500fd3747931e2a361b05279cec47"
+      }
+    },
+    "he_054": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "436c11bc245a1058321af04daaac61500d45b36d90c4a098ffd71b8c75a21304"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "b3030f562b138832fffaf71a118962cdf146eb0db04c417e78c903e5afe51914"
+      }
+    },
+    "he_055": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "c6a0aa1a68d9c5cf72b256c24d09fe9d314970601b5ecbf9ee8488ef04c73b32"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "2fd03f6ecfee399a188fba3b16f710fef32f1014f43c9fe2b06b9233905818ac"
+      }
+    },
+    "he_056": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "f2b876b20d1cb17eb8f3da3acee0c76500086931b9804823fc223e9741119aaa"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "20509e234b77af58662a802d100180f83fba6a5e568c6265256e51e01670a7e4"
+      }
+    },
+    "he_057": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "92ecb8cf68c631d29d568fb56054b566b5a1087f7e3f576693892046088bf009"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "e7dc1447529aae47a989c6472095ee564fd09020c2247787c86ef7eb5a6537af"
+      }
+    },
+    "he_058": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "6e6ff969d2ec4443ef49cf195cc84e2ca4cd83f754008cce56ff4c8deefb223a"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "8c02e87b8cb384f18853b9532db8602cd9c93d48d660610238781a68ea154d4f"
+      }
+    },
+    "he_059": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "742e8dac0aebe90c8eb644bd6732b895686324012fdb07af0a8817b29adf5c8d"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "95c84833501dc004bc60bbb40fe75ef552eae6a5b5efaa8b10942c53898279cf"
+      }
+    },
+    "he_060": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "a5fdb6cb566475f43442b98a52f611db5f4db2c138c7e194ebd2570804e007c6"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "c6b0b647eb0cc9976ed98820b5954060865bc9d261c7e37d2ca5a3a48e989448"
+      }
+    },
+    "he_061": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "e929ca1e30933807bc712e4fbd132969921409e45c95d54338a5924e652ff32f"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "b5b95fbf2e7e7ebab40f0acbdf4acdfefa07b2ebdb932db963bbd4e046744ffd"
+      }
+    },
+    "he_062": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "d2b3127a2419c47067397ffab0cc78d4c732936657a81160fd5d9793a429d52f"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "ee6e419a33a690752e30973f85a42a283a78dbb909c30d3ab0ff1312fdd58128"
+      }
+    },
+    "he_063": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "ea0ff27501883e0dad9ec637d45da246198dbdaa6e7c5a51bfadbfdd469c7725"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "b179ddb2f5a73180e62c0c7ade984461be27a10be916532c75432efd27f91388"
+      }
+    },
+    "he_064": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "a66acc7198a9b3397050edb0fdac8f77b79088b133b230dd80408982671de6a2"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "c98d310bc823cfe88c052472e089cf02bde4f6d5f6ea653635226a846adb7aca"
+      }
+    },
+    "he_065": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "321d3fcf4ba45b6c49b40688595084d7527ad0d4d4be11c7f719154e1da67bc3"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "764befad2386fdb806ce3b588e391f3b6305945a6f9ecc968ca44915e78bdf9b"
+      }
+    },
+    "he_066": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "f3f212a938ff6e715933115beac3d99b161012766aa1edbf263efb56e2f59c9d"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "83d2a8fedb00d8348fe0f0a99262a792db25a15c4206d8478be4a7c792f07e0e"
+      }
+    },
+    "he_067": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "1ed8d1bee1119d9ca19c9d622b04c298427b218da494a850612d02119a93c77f"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "ad04a32f45a8c7e7c23dc2277df4e729355c4a9c4194accbf066c256f71b6ec9"
+      }
+    },
+    "he_068": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "3169cfc5725d58b1e126ff8a19e94f573c480fb98858f026ad04ca82503f1d33"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "ba0590a299713cb0087d5cbd2fc324fc7c52ae82bc54a4d4446782ae18be2961"
+      }
+    },
+    "he_069": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "98446e9064c3d6b97760705dc9c63b8c8f83a1e885b1de6d34c8d3c306f1f7dd"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "fea218da5ed08088c2e79a12c63210178ec2d3db08a65194c71e490cb5e00e20"
+      }
+    },
+    "he_070": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "4ac2eef253361edb1c93820ef0b17e93e9ccbcc99ad1bf4ef135ae3b0f53ab8e"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "0763f97a01172a0d13560effd5f72fccf3bec5bb57315a2ebc189b382cd96cb7"
+      }
+    },
+    "he_071": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "1957cfed3f6699903274fd6133e3a200a9f66198fb1a036efd8d2c1dc05cb411"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "47ac9c89533ab599e6b5a74ba3f038ab134074a691db6c02170cf720b016c6ab"
+      }
+    },
+    "he_072": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "a9ab8b0d587d65271d10d96c8118cbca94cd487f2f9a722a08178a33b8440e73"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "62e32f185f2c9d83683c68fcb7807cbe87d1947b9fe7d98d4d0f08e528a4ae4d"
+      }
+    },
+    "he_073": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "acbd0d5d7380e951d01214252e480d4bf691eb998c33a984e79f86ae07c670ef"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "f70da66c5ec53a45f26e32de2acd7ee907fd918c6ad2a0fe309d8e2b702c0770"
+      }
+    },
+    "he_074": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "69d7e9118bb358ba2dd863b3555f4e3d62cb02674a9f8fe37f22e87ac145ca85"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "2674fb78d873cd168540ea759abc716786a4e998b9927458e9eedc844acc6319"
+      }
+    },
+    "he_075": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "d31c05eb6b9d79dcc379e78d4fb9aa9dc2bf94dd1b96a7f9331089f9312ed88e"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "e0b230f8c84d420b498a1c11d545dd906667712d215a8aa5cc3ee5846c3fea72"
+      }
+    },
+    "he_076": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "9944d52bc58216979fccaefd64b9380d6f275ff3563274eecf1c1f0d2af7dc0b"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "61307349919de8023630291df21d4a3ada0018929188bdbe95e5c44f25571a7e"
+      }
+    },
+    "he_077": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "29fd12f39198cd464b343730d1b78eced527d804ee5a10cebadf3c364f3ff5c7"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "6d308007e13b5979f39cf30c600657b2b10894b17904100f89b74232ee1f22d0"
+      }
+    },
+    "he_078": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "2a41d65da9528a1dc05705a4462030852dbcc01bb6ed4423398918288f8dadae"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "e326b6a5abdb25554377b837eb1f1540c95c09ce4bbbd141f2c84f56367a48fd"
+      }
+    },
+    "he_079": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "4880d685541ef5976bc362dd450c2b0ecd65d5b5027b323d3d44e4a645372077"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "3bdf2bc2459aa2d7310fb3458793d2458e4345da398f9857c1b97d08538894b5"
+      }
+    },
+    "he_080": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "5c956d5a498f8b880e31f0a48bccb8e9ebfeb531c61f1762ee5a94b448137ee7"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "c2889f91a795f7cdd3c931831c593f083fb7f66a3de1b814faa26dd82b39785d"
+      }
+    },
+    "he_081": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "37e854f2f432e9cdbb65687c7c59e196e98040a12750a5fc1ed952dabb1fd041"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "f079a01156032adc458d6d4cc545060414c47d2fd5f0e55bd2cbe82fdbaf62ad"
+      }
+    },
+    "he_082": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "270fea35d1fc6b336f87b91a8506bd896625068f43b890f5c9765e6e31671549"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "2bb6e71f312a1d2556d306b70c1b5c05770347d6ad19969cd4271c9b7f574ae4"
+      }
+    },
+    "he_083": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "b021d18d23aa88f1bb42facb86b53c05a91e8dcb9c5e40ed5c6121aaf1a056a3"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "6ec71b7905a0c9e5f9ccc99d9a88e2cf21525e2f7de1ace0333d4061387b7912"
+      }
+    },
+    "he_084": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "b85e65dec11be9e2105cf7ffc6827489c2375442fe47b4625b89b52a4f067038"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "f49e35168e1ac2182a4912cec9d6bca4aee833dd6441e4699cbaf54ea5b566cf"
+      }
+    },
+    "he_085": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "14f795806a650e173fce47a93cbf5f995ad5ffbd4dfb0cc11a9b9d27a0db1b4a"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "e8791e49b6073f480f329c6d9adc1cc3e5a7d9af53b438841dc8d45af93fa4cc"
+      }
+    },
+    "he_086": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "ab8fda5bb18066e7850d332f33fb1d55cd7c9ab9a0a9ea0df83cf50e7b15d3b9"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "49f0f4cfc669c073ce03f5360488a023d6afc4cf98ec414ae47d2237c30f95e9"
+      }
+    },
+    "he_087": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "eaa475a1a1a0decc37ff23a29fe72e7355732414dffcbc43463673ac610318ef"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "ea73d91734d45987d85aeb0ed7a225348293518cad0f40192da2f01bfe984e10"
+      }
+    },
+    "he_088": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "3f641cd2a30717949f0b79a4fe5b2109cd82cf71516c7a077cea4eef7d71ae2e"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "5ff9d776ddeaa16a1e3be5430489e21e3450101d54a6e2d6b2760f16bf2b956a"
+      }
+    },
+    "he_089": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "1abfe5e6670c6e2bb759b79400154dff25326e5bce933ca6d339907f0a1e004a"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "42433ae101bf55751abb19ebeb8abcdc85978e0d6e5377949a119bb15b4f10f2"
+      }
+    },
+    "he_090": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "95776d899339edf4902ec38a7608dc5df311ae0ec1521bafd0e2a6232afa55f7"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "ec88cea92de0c71550cfb82fa91c7696fc93f14e69880d4051bc5d0ed5b5783c"
+      }
+    },
+    "he_091": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "03815c9b6083e47088f57178253a40ff384e552324ee111c59e257fc6a5e1ad5"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "ba25c1066fc1e81f1f559248b523b4ea5ddda31d0f2fe729996ea2dbe0440359"
+      }
+    },
+    "he_092": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "1edf8362ce1c2e038a1fd93ce1623851da766656e10ad6e34cfabee491baa80e"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "74b8417c91a177d11e391e378d56a99c6daf778c09971c7ac70baffbc943fe6f"
+      }
+    },
+    "he_093": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "2e7d780a2fb214b46b6509e30bf33300b2618b9367458089dc71b6c1d498bc51"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "2ecb68c4643f24d810e04846681372bf001c713681dea57dc989eee2a2856156"
+      }
+    },
+    "he_094": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "7089162c0345413bf155e701c33e266a03dd4e50e3f6e7e8c8f1e1c6e4ae2b73"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "82a597e7ac9d29f1a3a45cc65ff7b23197b09b034113e50a7fef3382ade16ba5"
+      }
+    },
+    "he_095": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "614f482cc145b7ca4d109a5b00ebe213b2a0f20b01019ccaacca7bbf1e23036b"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "0fca8419c6052f3ad13a8fa98995ff1d0f69e6f3251925eb101275d387424c07"
+      }
+    },
+    "he_096": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "6856c982c4bc1c7dc139381f3c8616d79213e6a5d02f0b20e3ff31e82346d33a"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "c0bf14c1f86bd1a35b6b4d1aea7db25b76a6ec7d2fc601d2b758d0f5865c54c3"
+      }
+    },
+    "he_097": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "af68841d14421a85a67ce30263f487a36a8c0d42dc90d1fceb43a63261cab6d9"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "3b47d291d41b69abbc931f7f54e0f065979a4798a28f3a3414e02309e59f2fd2"
+      }
+    },
+    "he_098": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "2971bb5163ed2cc07a8eded3d949beb90be232f3ffe90d399c08753976434b4f"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "583dee03f38add89c948fe032c1c0a040b0fd593ae67a3bbd09e8c78ad27b04a"
+      }
+    },
+    "he_099": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "3e534dd3a972079e1f5c3cb6ad17676f9211e66838cd99683f04567965ae7485"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "1dff5c12f4ea6371d2f369e85f075679e8524e60287ca23f14ecddad73567bec"
+      }
+    },
+    "he_100": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "44afae9fe7408e02c18b85e3a0e71f83e8a6c7f3e7f9c7155b3e3112ac43c80b"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "b0233dfb8db2fa59fd325b4c8931eb7ef246e7e8a461f5ee218f9c3a72a911d6"
+      }
+    },
+    "he_101": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "d41e087c105afc635c7e0a7fe67d2575a3232b15e551a8cdb59b0eb895f91f23"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "9c7d068b507e6fb68d8c0ac7e62861e5d0f8bd7765fde8b047e28fc3901dd888"
+      }
+    },
+    "he_102": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "58b474875c9f7806a8b080ad9436bf21dfe91a35c97f3b953fd5137478773dd6"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "89c922e2b056e896763ecbc3adb07b41ec76e85bb55a8327beffc712189faf57"
+      }
+    },
+    "he_103": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "6bd7689b385ca58854bd4de15b9724fa201f5488d94c341d9414dcb1152e48d5"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "bde68dedecd56245783c575e259ebc9f4066846ab7c7e08f003bc00cbf6cd29c"
+      }
+    },
+    "he_104": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "7ead894a294bc94ea58c6ccc36b108a5e77adb233788f2d98c969ceb89919d85"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "a2bc8bd0963287f3c549fbe907c0c08d2bafc04a9e5c11e7af9c149ee4749895"
+      }
+    },
+    "he_105": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "7b8cc6061141f942277b219bc064cab5a45ce367c0d136619d2311f3a7379083"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "8e0022bd0443c06e83cfb4e110d1f388bc0285b2974b3d02307d61e61f20dd03"
+      }
+    },
+    "he_106": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "97c9e4275d42380b40181c6b6c5b845912a1dae1c8ab4e0618568e024c8aba42"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "17f3fcd2b84e843fdb4b70d01d024749291a8a8e32ef6bfe0f649f9a648b31a9"
+      }
+    },
+    "he_107": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "7b3ae08345b02d0baf78c4880309f44762325935d610b554508f8af40a8dcdc8"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "9736a17bbcc01518ef5eac3a4fb17911cf3afdc21f84caea8d172acd9c3909ed"
+      }
+    },
+    "he_108": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "13f766639040af47810d7c98ccfd086aebc70d1b5c6a75508e99365330f857a8"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "cb9e3ac01eeaeff63cc31a68c5021949a9738fe392c92f3fca5bea7e89778505"
+      }
+    },
+    "he_109": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "863c2bcbda7c19c4786f73b6110599f6491bca3516be1d78c7d2224d491ece0b"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "0982c6efa069ebea564971f6b8c18fd412ccd5d04a545100a4020a89f83cc667"
+      }
+    },
+    "he_110": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "80a4680448c5d11aed77dcd45375d7a45cdccf77fc449ffdfe5711ac81c91440"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "30a4f4061713c5e7d571ad63f359c4089e4b2b47f8a3c92f29279123664ad1ee"
+      }
+    },
+    "he_111": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "cd44c5643aaa7c926147c08426f9c96dcb640f5abe3323f692bbfa0d087d092e"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "fd0958412000bdbaff048779cb5b952a24fd5fd55293fbbd0811250caa513222"
+      }
+    },
+    "he_112": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "cca7e42c8049144835470402517fdd65d74978adf97d56fe53904aee31ba8613"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "7aec287c0f40a96cca1f0cb47699672bd5d152869dd592049557cbc9e63f2ba7"
+      }
+    },
+    "he_113": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "8a9cbc14e4e87776741b7f25e97e70fda2e34f173fcf23d8123ed15b8e710c9c"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "58897eb0bd46a0f4311ae8dea6e1da9889c8b7c4be265f63b67f9e88b7ae7075"
+      }
+    },
+    "he_114": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "ef8d035f11066838e8da5d7415a940b41deb3e65c94e355285d2db529991692b"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "af491630b39fd5ee78929d4fdced400abddc2a414a24bd3213d1e94ec3c24c9a"
+      }
+    },
+    "he_115": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "236922fbdf1b0c74e8789eaf56f7d4838c6cfbc6c726bdccb4f96a01a639772f"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "c00517d51397c8f70729e2110412ca611c3cba69a60b0311d642ad58a04b63dc"
+      }
+    },
+    "he_116": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "c5c3e092e5599a3251560b6c48cb1f307e151ec2116197ba632c1a28f7e1e26b"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "15bb00810f5283d2e722cbc070329cdb311ae3e8024a1536270cc22947285254"
+      }
+    },
+    "he_117": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "49b6e7f03051402a57ad58808644d7ae0d11c816528ddfc83768b67a47f5074e"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "1141c6a03aac1082a848d8a0301bd6b01b79ca185ef2ca02dafe8b7de775d9e1"
+      }
+    },
+    "he_118": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "feebb1ededb4dd0e9ea8183772d0fde99d15dc97a76b7ae194c44e2bbb196741"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "799beb2ead64b3ab839bbf8e66436a9c93c12698f860c12c88fbc070a0466ecc"
+      }
+    },
+    "he_119": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "769fdfc8cc13bf3f58806fc0730fef0c962684540ae34669006b326b5d0587c1"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "9d37f4a7db81cf58c57728071ad3cb243b30afdeaff445a17db9b1b02cf885d2"
+      }
+    },
+    "he_120": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "89ebb2abf4f6baca07a4c1a8bc30e7eb408ce07ff04307532cdf151ac788743e"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "ae38854eba3dda811dce9f4d70690371e50aa3d258f206013d28deb897e96855"
+      }
+    },
+    "he_121": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "2072d88947326fc5b3d73b4ea34fa84b9a05b0c1a6963c4e173710f182e0b05d"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "d88600af6c17deae4cd333f8e79f26e632061b93580ddddcb79ff296c8f12088"
+      }
+    },
+    "he_122": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "ccbdf1912af12b12744e8b8b0ae4fb6af22ad5ca6d41ad77cdb2c119aaae4e9d"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "b107929057804b9915dbe746670adfc953abb7f3fb74fe6e7edf0abc56ed8ebb"
+      }
+    },
+    "he_123": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "5c73ea5f7e867d34e65f259aa357f05af5aa954aa70074f35209b884ffbd14b3"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "74f194beec68a2880ca033bfd373ca993f1d06d0fd358ac474876d004a2d3170"
+      }
+    },
+    "he_124": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "6f6052e4054d06494f9927433d25ac06264c215e772f46af9fd6fd5e8f609355"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "d16f5387f91b58ed1199951fbdf05b88e1895b3739367b954c452d8b06f5d9bc"
+      }
+    },
+    "he_125": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "541a42c54e6a72cf097b51f0a2d3cdc15a8b731677e6c540ba82833fc886ba79"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "ff3fe581b7c7f94207cd05680bd9ff0e8041efca71dde72c85037a68341a9c14"
+      }
+    },
+    "he_126": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "411e5a087e27ea286fcf437b1cb66180897cd9f59b250696ff9183d3c485f876"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "3b5a1d6590206bb241c656d44cdc7f20ee4f893be9aa54ae278c3facc37e171b"
+      }
+    },
+    "he_127": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "8268c0130e5f34871d86053faeeb228c25c7388eb89ed58a996705486e35f0b9"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "4d6be429a33490cf3d57efe7b4f54a9c1054c0a5206f84e60ed07b24bfa84ff0"
+      }
+    },
+    "he_128": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "a9f28adcb28441b2f622858b99639622fe57a4523fcd7f1a14d437b0975e6a0b"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "50b9ae4ee2dba6dd99cf9d060767d9a929b40bb59e8220b1cf29d28128dac5e8"
+      }
+    },
+    "he_129": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "b2c78cc3e503d1fb0a670d2017b4553c501412365bee351196f6baf61ae33196"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "260a7d903faf5cfcb444c0b66b39ca6ebb3918fd29e10644be0a137fefb4927f"
+      }
+    },
+    "he_130": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "3816141ae22284fc2567ca24e62cbff41117f7e76fef3e576d2915d5297c954c"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "ce7e5153de78fead7dfd245a238348be0e2a02694daf4bd910665de78ae8bfce"
+      }
+    },
+    "he_131": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "70a8583abf3192f0d00b69152cf29e9e57f6087687e1a9777b8a3aa081a577b7"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "ec8caa0c8a19659a4bb355bb3845a1758fbedae5301425340c33ccc75a0409db"
+      }
+    },
+    "he_132": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "5c83f2ad4352cb6e882e63bef6dc15d35c5041b0ccba576904267259802438d3"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "0843e0590c4fe66af3af13f5e7c9f0972a12741290c2ce3f1c270a785dade7dd"
+      }
+    },
+    "he_133": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "5e2ba0bc9519b6a8eeacd479c111d53639260d08e8a1e333025b9b08abd3d800"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "24599c1f5be1f143be8a5be4e512dc89fdd1b8acd53394d01f8f73be18d50169"
+      }
+    },
+    "he_134": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "7237151d09df8b9528ec70ed432ea27eb85931ce7e982c7d843204b4a4beee26"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "a8d0b366c668b3597fb60defc8c67e1e9f1ca8cad3e3ef6989657e2316f7696a"
+      }
+    },
+    "he_135": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "82e49818b7d365b42406fa3a3a94fdfefc99f3dbc8849a518c216a68e28db8c1"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "d08638329318ee3d995858aaa07a5250d1403459f25d0fc839e76f9c5bf65c24"
+      }
+    },
+    "he_136": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "be81664c4de95608b75ec3455352e3989c70f6c1ec107d99310b8488650b4316"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "fbdd5305dcc831470b9b89b70acc71d0437bacc241967087319fc2540894767f"
+      }
+    },
+    "he_137": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "9ea81957b87746ab0789d49c00415337392cc541f9e1b281d2d360bdf23711f2"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "298a49e5f60b88a2ee41731bf463f17c16cd304b0f961213599a06ac989cc9a2"
+      }
+    },
+    "he_138": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "646c6d33eef0e9273980b7b3613f83ae50d91038c818d7ec994022e560dfc42a"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "f43efd7e17efc60d1ad9333e2d6f7184d94c3f82a55e1bd782689681c1eb1061"
+      }
+    },
+    "he_139": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "162a86f8795c4720059af648510b07b043121e90d55390ab4335a0192f5425ed"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "0a0198948cea1b6cd1654b872c97df3da8a9f1323a412d20f1b6393ffe28cc4b"
+      }
+    },
+    "he_140": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "daeae3ed3a1416190ec9c1bd71faa39a388e9107b006fa3c3bb6847acdb4644c"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "8c860b1caa2b7dea2ad1e306576a2aafe7cf51a1102a568276d0850112ba0ac7"
+      }
+    },
+    "he_141": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "7b652bcd32a9be8ec5b0da7c6f9ed5820af96d074446dba386f92015e5032fb8"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "8e695b44525fb4b7f6f6a5614d656607ebed55064c0eb57b2d773c627c514199"
+      }
+    },
+    "he_142": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "70a5366f616e0e72dd929a553ec9b76f8fbf2bdba0e1117512fc077d53faf5f5"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "55c4e739c426536a9f6c7b14add4ccdc0a34ca26716d17518ac8331d49ce6a3d"
+      }
+    },
+    "he_143": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "0fc311aa4d1995955fa559524739db03cbf36ee508fca07514807b84ca3da1de"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "e648e41fcab6e57b0b3926b7d2c913ba736ffa55669055a1f89a62bd054242f3"
+      }
+    },
+    "he_144": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "11b866e608f1ae252c0a9a7fe83f4dd641ab323126dc6e4aca9bf74fdb2d90c7"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "eba247743717e67748f44f0b5eaad50318880c657f5edb8f3e2ea14a0cb5489c"
+      }
+    },
+    "he_145": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "d1a87480884516375d8715f0539bb7edb740b7da552a7787b67b56692542930c"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "202306d4de5033b58abf1081570fab2a3bfe0a95298e952a58fb2cd384f6a1f0"
+      }
+    },
+    "he_146": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "f06df09d1fcb857a31b60fb37e6f873727b5df2a47ed49f03a26fbdbb719d262"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "bc8d0a5108c04fd62c99ff6195f132001f7269b4dd0d5c7f1e101562b9354cbb"
+      }
+    },
+    "he_147": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "1d2bf17f9b81e47d4a24b4fa8958084fc27d953f922a92dd44b0ee245c0487be"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "59e4337bd4da49de69ed43e37e74b1d7c75400313d5cbd048dd29eaf443ad216"
+      }
+    },
+    "he_148": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "6479eff14c173236065361a3e947d0c08c9b639b572699a73bcdcbbb60847aef"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "c2aa12aca71a02b54d38c2c4b0aca063e679f1afdc3473199687d83b9ad0a2e7"
+      }
+    },
+    "he_149": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "a0796901a7bc3f03e5b78474dd62e866d95df8b9e9fbd9349dbffb207dc72043"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "6880a514fea53cb8718c98cde599512f0514bbc9cb002ec39eb1ff28c4588c77"
+      }
+    },
+    "he_150": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "a336d4934fd45ad78793ad781fe409ffa8d0ff419b0e65e8bef9099f4d72fcc8"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "0951c4e1435ba5153d7b4bb137ff4819dbc3b833ff3bb1189e8bb3444dd79092"
+      }
+    },
+    "he_151": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "3b7735079023e89673dc8eb0d75f669b40914ec8e1fc19e41fd84a46c1f88beb"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "ba06a40ab0d151add93fa5cfaf9c6e66baf496f84f7fd37e42a9e86b6bf5d4b9"
+      }
+    },
+    "he_152": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "76d9595447877b73e6082e1b0646ca2883128fa1254623ecc07a7f7d10d98de2"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "84def75953c2472b32acee0374842aca5279ca006933f6aeeccdb86405fa9914"
+      }
+    },
+    "he_153": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "4816fc810da91cefedc7117dd23057181398027952c22c0be2e047b92fabd568"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "1f526e0ea59f3235ad65bacbb752b9d6e9a9403984603bf776de283858eda237"
+      }
+    },
+    "he_154": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "d072dd782398c28370545d27562d771deacc92f56090720d16cab241609ac0ac"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "250c74f7293d21fc5f4510564499d80e89a60ab2b15e04445ada5172bb53cb64"
+      }
+    },
+    "he_155": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "b07aa0e2f590618ea195a4ba37d3375738c39fcfb43f854b8ac6bcc6aa3b5879"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "1adfec8eedb84d5dd148127ec9f4279cd1d916951468b4c22f571cfe15c2af5f"
+      }
+    },
+    "he_156": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "96c13bfda9bef2768bbe41fe0a484d3ad44e7799d0794a3efcd883208da23cd0"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "142d09bcfeb4cc9a84aea05ebf41f17407bbca33d11307b6c67cfcbe9eb0b4e7"
+      }
+    },
+    "he_157": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "26782de356aa07c9316663cb7a067ef31d7709dfdf0d194f7a51d34a2f2d734f"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "52454db0bce53f0da4abd6648e8b65640a5258cfc1f37abd3c9d7febda730b07"
+      }
+    },
+    "he_158": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "c03ed76ab693928108ca9086e43b3a9150c7abc96e409ddbdd9b912ce3173f5a"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "154b0590a27e0ca2508cdabce8a724da6ff0937421146cdf2d72086ed52a3679"
+      }
+    },
+    "he_159": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "52168fde81be04ba933c60a5dba04e0d7a7871e55c906ab970b427b56a42ddd8"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "c2303f0773b7c90319683b9cf9d05fca7eb3194ccba671db05ffc15ab0bf6963"
+      }
+    },
+    "he_160": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "6b8f402e34c7a00536b2977cfe195aef90daa99101e57fa75b7128e10c001e2c"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "72b0bcd587685627ac793e715407f3bc0ef81a9aab36d1421b7257ef29e06ea9"
+      }
+    },
+    "he_161": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "830d3d1fb6d9650b54b6b2c6c269d2781d139482d3ecfb7b3f8b08231e29c234"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "24c65ed1babdfa49c41e3867d3a44871b51ac2fc7d5af0c900c2ddf31b95dead"
+      }
+    },
+    "he_162": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "e26cab770d8978593f92a85da19ac8e5b82b181a492ef59952db6e8caf30b4d0"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "e46b79604aa6cf4304ca4d439276571c83d0d3946016236b7b482555d84b03a7"
+      }
+    },
+    "he_163": {
+      "src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "solution.py": "200c8185748c22d1513fbe7eb50faf526c7e6c13b8c6e449317b15005f4bc736"
+      },
+      "tests": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test_solution.py": "e59c60dab5ae19de26f66a2a768a1890aaa04db6dbb653df43c7d4e8620a5d31"
+      }
+    }
+  },
+  "source_manifest_sha256": "588a68da19d52cc3aeadf938f58a33574bbbb2d6656a63f7aba34ba2a8700499",
+  "source_run": "/Users/mtov/ark-project/human-eval-all/results/generic-prompts-01",
+  "suite_sha256": "7c0623de70642f02eb39db88247d13449704d9f7612b1e3cac9dd9f5da966db7",
+  "tasks": [
+    "he_000",
+    "he_001",
+    "he_002",
+    "he_003",
+    "he_004",
+    "he_005",
+    "he_006",
+    "he_007",
+    "he_008",
+    "he_009",
+    "he_010",
+    "he_011",
+    "he_012",
+    "he_013",
+    "he_014",
+    "he_015",
+    "he_016",
+    "he_017",
+    "he_018",
+    "he_019",
+    "he_020",
+    "he_021",
+    "he_022",
+    "he_023",
+    "he_024",
+    "he_025",
+    "he_026",
+    "he_027",
+    "he_028",
+    "he_029",
+    "he_030",
+    "he_031",
+    "he_032",
+    "he_033",
+    "he_034",
+    "he_035",
+    "he_036",
+    "he_037",
+    "he_038",
+    "he_039",
+    "he_040",
+    "he_041",
+    "he_042",
+    "he_043",
+    "he_044",
+    "he_045",
+    "he_046",
+    "he_047",
+    "he_048",
+    "he_049",
+    "he_050",
+    "he_051",
+    "he_052",
+    "he_053",
+    "he_054",
+    "he_055",
+    "he_056",
+    "he_057",
+    "he_058",
+    "he_059",
+    "he_060",
+    "he_061",
+    "he_062",
+    "he_063",
+    "he_064",
+    "he_065",
+    "he_066",
+    "he_067",
+    "he_068",
+    "he_069",
+    "he_070",
+    "he_071",
+    "he_072",
+    "he_073",
+    "he_074",
+    "he_075",
+    "he_076",
+    "he_077",
+    "he_078",
+    "he_079",
+    "he_080",
+    "he_081",
+    "he_082",
+    "he_083",
+    "he_084",
+    "he_085",
+    "he_086",
+    "he_087",
+    "he_088",
+    "he_089",
+    "he_090",
+    "he_091",
+    "he_092",
+    "he_093",
+    "he_094",
+    "he_095",
+    "he_096",
+    "he_097",
+    "he_098",
+    "he_099",
+    "he_100",
+    "he_101",
+    "he_102",
+    "he_103",
+    "he_104",
+    "he_105",
+    "he_106",
+    "he_107",
+    "he_108",
+    "he_109",
+    "he_110",
+    "he_111",
+    "he_112",
+    "he_113",
+    "he_114",
+    "he_115",
+    "he_116",
+    "he_117",
+    "he_118",
+    "he_119",
+    "he_120",
+    "he_121",
+    "he_122",
+    "he_123",
+    "he_124",
+    "he_125",
+    "he_126",
+    "he_127",
+    "he_128",
+    "he_129",
+    "he_130",
+    "he_131",
+    "he_132",
+    "he_133",
+    "he_134",
+    "he_135",
+    "he_136",
+    "he_137",
+    "he_138",
+    "he_139",
+    "he_140",
+    "he_141",
+    "he_142",
+    "he_143",
+    "he_144",
+    "he_145",
+    "he_146",
+    "he_147",
+    "he_148",
+    "he_149",
+    "he_150",
+    "he_151",
+    "he_152",
+    "he_153",
+    "he_154",
+    "he_155",
+    "he_156",
+    "he_157",
+    "he_158",
+    "he_159",
+    "he_160",
+    "he_161",
+    "he_162",
+    "he_163"
+  ],
+  "timeout": 60,
+  "worker_sha256": "734a4908a35afabc99b2edb9455b1ff9e02c82172eb5efc7b685718d537b9ca5"
+}

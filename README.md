@@ -265,6 +265,76 @@ cd results/generic-prompts-01/workspaces/he_000
 ../../../../../ark/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_solution.py
 ```
 
+## Hidden-Test Evaluation
+
+The generation runner's `results.csv` reports **visible-test results only**.
+Use the offline evaluator to check whether saved solutions also pass additional
+tests that were not supplied to Ark. It does not call a model, change the saved
+solutions, or let Ark repair a failing solution.
+
+The suite covers all **164 tasks with 121,129 additional cases**, using pinned
+HumanEval+ inputs and reference implementations, plus targeted edge cases.
+See [evaluation/README.md](evaluation/README.md) for sources, licenses, excluded
+cases, numerical tolerances, ambiguous specifications, and isolation limits.
+This is a local derivative, not an official HumanEval+ score.
+
+From the project root, first validate the references through both suites:
+
+```bash
+../ark/.venv/bin/python evaluate_solutions.py --validate-references
+```
+
+Check that all 164 references have `overall=PASS`. Then evaluate the saved
+generic-prompt run, without generating new solutions:
+
+```bash
+../ark/.venv/bin/python evaluate_solutions.py --run results/generic-prompts-01
+cat evaluation_results/generic-prompts-01/summary.json
+```
+
+The completed reevaluation and its reviewed failure cases are summarized in
+[HIDDEN_EVALUATION_REPORT.md](HIDDEN_EVALUATION_REPORT.md).
+
+For a future benchmark run, run the generation command first and invoke this
+evaluator only after generation has finished. Point `--run` at that run's results.
+Hidden assets are kept under the separate project-level `evaluation/` directory;
+they are never copied into the task or Ark runtime workspaces.
+
+Reports are saved separately from the original benchmark artifacts:
+
+```text
+evaluation_results/generic-prompts-01/
+├── manifest.json             # Suite, evaluator, environment and solution hashes
+├── results.csv               # Separate visible, hidden and combined status
+├── summary.json
+└── traces/
+    ├── he_145.visible.log
+    ├── he_145.hidden.log
+    └── he_145.hidden.json     # First failing input, expected result and actual result
+```
+
+The CSV distinguishes `visible_status`, `hidden_status`, and `overall_status`,
+with separate times, exit codes, case counts, and error types. A combined `PASS`
+requires both suites to pass. Hidden checking stops at the first failure for
+each task, so `hidden_cases_checked` may be less than `hidden_cases_total`.
+The command returns zero when evaluation finishes, including runs with failed
+solutions: inspect the summary rather than treating the exit code as a pass rate.
+
+Each visible/hidden worker has a 60-second limit; each hidden call and comparison
+has a 2-second limit. Set `--timeout` or `--case-timeout` to change them, using a
+new output directory. `TIMEOUT` is recorded separately from functional failures.
+Repeat the exact command to resume an interrupted evaluation. Changes to code,
+cases, environment, source files, task selection, or limits require a new output:
+
+```bash
+../ark/.venv/bin/python evaluate_solutions.py --run results/generic-prompts-01 \
+  --output evaluation_results/he145-review --task he_145
+```
+
+To rebuild the suite offline, run `build_hidden_suite.py`, then validate the
+references again using a fresh output directory. The tests are hidden from the
+generation workflow, not secret public data or an operating-system sandbox.
+
 ## Runner Tests
 
 ```bash
@@ -279,6 +349,8 @@ The detailed review report is available in [VERIFICACAO.md](VERIFICACAO.md) (in 
 The `.gitignore` allows tracking each run's artifacts: `results.csv`,
 `manifest.json`, `traces/`, and `workspaces/`. Runtime copies in `runtime/`,
 lock files, and caches remain excluded.
+Offline reports under `evaluation_results/` are also included, except locks and
+temporary files. The `evaluation/` directory contains the reproducible suite.
 
 When creating the repository, `git add .` already includes these results.
 To upload new evaluations after the repository has been created and connected
@@ -289,6 +361,14 @@ git add .gitignore results/
 git status
 git commit -m "Add Ark evaluation results"
 git push
+```
+
+To include the hidden suite and its reports in a commit:
+
+```bash
+git add build_hidden_suite.py evaluate_solutions.py evaluation/ evaluation_results/ tests/ README.md .gitignore
+git status
+git commit -m "eval: add hidden tests and offline solution evaluation"
 ```
 
 ## Cleanup Performed
