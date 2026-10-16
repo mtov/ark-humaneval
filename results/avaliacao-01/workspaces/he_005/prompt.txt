@@ -1,0 +1,13 @@
+Complete the implementation of the function `intersperse` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+from typing import List
+
+
+def intersperse(numbers: List[int], delimeter: int) -> List[int]:
+    """ Insert a number 'delimeter' between every two consecutive elements of input list `numbers'
+    >>> intersperse([], 4)
+    []
+    >>> intersperse([1, 2, 3], 4)
+    [1, 4, 2, 4, 3]
+    """
+

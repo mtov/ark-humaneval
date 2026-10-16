@@ -1,0 +1,73 @@
+[request]
+Complete the implementation of the function `sort_array` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+
+def sort_array(array):
+    """
+    Given an array of non-negative integers, return a copy of the given array after sorting,
+    you will sort the given array in ascending order if the sum( first index value, last index value) is odd,
+    or sort it in descending order if the sum( first index value, last index value) is even.
+
+    Note:
+    * don't change the given array.
+
+    Examples:
+    * sort_array([]) => []
+    * sort_array([5]) => [5]
+    * sort_array([2, 4, 3, 0, 1, 5]) => [0, 1, 2, 3, 4, 5]
+    * sort_array([2, 4, 3, 0, 1, 5, 6]) => [6, 5, 4, 3, 2, 1, 0]
+    """
+
+[response 1]
+thought: I’ll inspect the workspace files to locate the implementation and tests.
+action: list_files src/solution.py
+
+[response 2]
+thought: I need to inspect the existing implementation and any surrounding context before editing.
+action: read_file src/solution.py
+
+[response 3]
+thought: I’ll copy the input, choose sort order from the original endpoints’ sum, and handle the empty array separately.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -14,4 +14,8 @@
+     * sort_array([2, 4, 3, 0, 1, 5]) => [0, 1, 2, 3, 4, 5]
+     * sort_array([2, 4, 3, 0, 1, 5, 6]) => [6, 5, 4, 3, 2, 1, 0]
+     """
+-    pass
++    if not array:
++        return []
++
++    reverse = (array[0] + array[-1]) % 2 == 0
++    return sorted(array, reverse=reverse)
+
+
+[response 4]
+thought: The function has already been read and an edit was applied; run the tests to check the implementation.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 5]
+thought: The implementation was applied and the tests pass.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 4924
+elapsed_seconds: 10.30
+tool_counts: list_files=1, read_file=1, edit_file=1, run_tests=2, finish=1
+

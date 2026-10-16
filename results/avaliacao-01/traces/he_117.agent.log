@@ -1,0 +1,76 @@
+[request]
+Complete the implementation of the function `select_words` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+
+def select_words(s, n):
+    """Given a string s and a natural number n, you have been tasked to implement 
+    a function that returns a list of all words from string s that contain exactly 
+    n consonants, in order these words appear in the string s.
+    If the string s is empty then the function should return an empty list.
+    Note: you may assume the input string contains only letters and spaces.
+    Examples:
+    select_words("Mary had a little lamb", 4) ==> ["little"]
+    select_words("Mary had a little lamb", 3) ==> ["Mary", "lamb"]
+    select_words("simple white space", 2) ==> []
+    select_words("Hello world", 4) ==> ["world"]
+    select_words("Uncle sam", 3) ==> ["Uncle"]
+    """
+
+[response 1]
+thought: I’ll inspect the workspace files to locate the implementation and tests.
+action: list_files blank
+
+[response 2]
+thought: The previous file-list request used the literal text “blank” as a path; retrying with an empty input to inspect the workspace.
+action: list_files .
+
+[response 3]
+thought: I’ll read the existing implementation before making a targeted change.
+action: read_file src/solution.py
+
+[response 4]
+thought: Count each word’s non-vowel letters, case-insensitively, and return matching words in order.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -12,4 +12,9 @@
+     select_words("Hello world", 4) ==> ["world"]
+     select_words("Uncle sam", 3) ==> ["Uncle"]
+     """
+-    pass
++    vowels = set("aeiouAEIOU")
++    return [
++        word
++        for word in s.split()
++        if sum(1 for letter in word if letter not in vowels) == n
++    ]
+
+
+[response 5]
+thought: The function has already been edited; run the tests to check that the implementation meets the specification.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 6]
+thought: The implementation was edited and the tests passed.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 5478
+elapsed_seconds: 11.25
+tool_counts: list_files=2, read_file=1, edit_file=1, run_tests=2, finish=1
+

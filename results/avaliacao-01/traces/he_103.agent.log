@@ -1,0 +1,72 @@
+[request]
+Complete the implementation of the function `rounded_avg` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+
+def rounded_avg(n, m):
+    """You are given two positive integers n and m, and your task is to compute the
+    average of the integers from n through m (including n and m). 
+    Round the answer to the nearest integer and convert that to binary.
+    If n is greater than m, return -1.
+    Example:
+    rounded_avg(1, 5) => "0b11"
+    rounded_avg(7, 5) => -1
+    rounded_avg(10, 20) => "0b1111"
+    rounded_avg(20, 33) => "0b11010"
+    """
+
+[response 1]
+thought: I’ll read the target function and tests before making a change.
+action: read_file src/solution.py
+
+[response 2]
+thought: I’ll check the tests to confirm how rounding is expected.
+action: read_file tests/test_solution.py
+
+[response 3]
+thought: The average is `(n + m) / 2`; use exact integer arithmetic with ties rounded to even, then convert the result to binary.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -10,4 +10,11 @@
+     rounded_avg(10, 20) => "0b1111"
+     rounded_avg(20, 33) => "0b11010"
+     """
+-    pass
++    if n > m:
++        return -1
++
++    total = n + m
++    average = total // 2
++    if total % 2 and average % 2:
++        average += 1
++    return bin(average)
+
+
+[response 4]
+thought: The implementation has been edited; run the tests to verify it.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 5]
+thought: The implementation has been updated and the tests pass.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 5378
+elapsed_seconds: 14.76
+tool_counts: read_file=2, edit_file=1, run_tests=2, finish=1
+

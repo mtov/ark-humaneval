@@ -1,0 +1,12 @@
+Complete the implementation of the function `strlen` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+
+
+def strlen(string: str) -> int:
+    """ Return length of given string
+    >>> strlen('')
+    0
+    >>> strlen('abc')
+    3
+    """
+

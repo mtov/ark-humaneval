@@ -1,0 +1,35 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Complete the implementation of the function `all_prefixes` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+from typing import List
+
+
+def all_prefixes(string: str) -> List[str]:
+    """ Return list of all prefixes from shortest to longest of the input string
+    >>> all_prefixes('abc')
+    ['a', 'ab', 'abc']
+    """
+[1] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -6,4 +6,4 @@
+     >>> all_prefixes('abc')
+     ['a', 'ab', 'abc']
+     """
+-    pass
++    return [string[:i] for i in range(1, len(string) + 1)]
+Authorize edit? [y/N]: [2] edit_file
+Running tests...
+Tests: passed
+[3] run_tests
+[4] finish
+Running tests...
+Tests: passed
+Total tokens: 2816
+Elapsed time: 8.28s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

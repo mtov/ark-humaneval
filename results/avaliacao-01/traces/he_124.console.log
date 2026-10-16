@@ -1,0 +1,75 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Complete the implementation of the function `valid_date` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+
+def valid_date(date):
+    """You have to write a function which validates a given date string and
+    returns True if the date is valid otherwise False.
+    The date is valid if all of the following rules are satisfied:
+    1. The date string is not empty.
+    2. The number of days is not less than 1 or higher than 31 days for months 1,3,5,7,8,10,12. And the number of days is not less than 1 or higher than 30 days for months 4,6,9,11. And, the number of days is not less than 1 or higher than 29 for the month 2.
+    3. The months should not be less than 1 or higher than 12.
+    4. The date should be in the format: mm-dd-yyyy
+
+    for example: 
+    valid_date('03-11-2000') => True
+
+    valid_date('15-01-2012') => False
+
+    valid_date('04-0-2040') => False
+
+    valid_date('06-04-2020') => True
+
+    valid_date('06/04/2020') => False
+    """
+[1] list_files blank
+[2] list_files /Users/mtov/ark-project/human-eval-all/results/avaliacao-01/runtime/ark-workspace
+[3] list_files src/solution.py
+[4] read_file solution.py
+[5] list_files tests
+[6] read_file test_solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -19,4 +19,26 @@
+ 
+     valid_date('06/04/2020') => False
+     """
+-    pass
++    if not isinstance(date, str) or len(date) != 10:
++        return False
++
++    if date[2] != "-" or date[5] != "-":
++        return False
++
++    month_text = date[:2]
++    day_text = date[3:5]
++    year_text = date[6:]
++
++    if not (month_text.isascii() and month_text.isdigit()
++            and day_text.isascii() and day_text.isdigit()
++            and year_text.isascii() and year_text.isdigit()):
++        return False
++
++    month = int(month_text)
++    day = int(day_text)
++
++    if month < 1 or month > 12:
++        return False
++
++    max_day = 29 if month == 2 else (30 if month in (4, 6, 9, 11) else 31)
++    return 1 <= day <= max_day
+Authorize edit? [y/N]: [7] edit_file
+Running tests...
+Tests: passed
+[8] run_tests
+[9] finish
+Running tests...
+Tests: passed
+Total tokens: 10430
+Elapsed time: 18.53s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

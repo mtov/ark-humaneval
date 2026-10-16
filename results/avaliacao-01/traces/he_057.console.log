@@ -1,0 +1,42 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Complete the implementation of the function `monotonic` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+
+
+def monotonic(l: list):
+    """Return True is list elements are monotonically increasing or decreasing.
+    >>> monotonic([1, 2, 4, 20])
+    True
+    >>> monotonic([1, 20, 4, 10])
+    False
+    >>> monotonic([4, 1, 0, -10])
+    True
+    """
+[1] list_files blank
+[2] list_files .
+[3] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -9,4 +9,6 @@
+     >>> monotonic([4, 1, 0, -10])
+     True
+     """
+-    pass
++    return all(a <= b for a, b in zip(l, l[1:])) or all(
++        a >= b for a, b in zip(l, l[1:])
++    )
+Authorize edit? [y/N]: [4] edit_file
+Running tests...
+Tests: passed
+[5] run_tests
+[6] finish
+Running tests...
+Tests: passed
+Total tokens: 4720
+Elapsed time: 11.48s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

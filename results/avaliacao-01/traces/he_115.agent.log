@@ -1,0 +1,89 @@
+[request]
+Complete the implementation of the function `max_fill` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+
+def max_fill(grid, capacity):
+    import math
+    """
+    You are given a rectangular grid of wells. Each row represents a single well,
+    and each 1 in a row represents a single unit of water.
+    Each well has a corresponding bucket that can be used to extract water from it, 
+    and all buckets have the same capacity.
+    Your task is to use the buckets to empty the wells.
+    Output the number of times you need to lower the buckets.
+
+    Example 1:
+        Input: 
+            grid : [[0,0,1,0], [0,1,0,0], [1,1,1,1]]
+            bucket_capacity : 1
+        Output: 6
+
+    Example 2:
+        Input: 
+            grid : [[0,0,1,1], [0,0,0,0], [1,1,1,1], [0,1,1,1]]
+            bucket_capacity : 2
+        Output: 5
+    
+    Example 3:
+        Input: 
+            grid : [[0,0,0], [0,0,0]]
+            bucket_capacity : 5
+        Output: 0
+
+    Constraints:
+        * all wells have the same length
+        * 1 <= grid.length <= 10^2
+        * 1 <= grid[:,1].length <= 10^2
+        * grid[i][j] -> 0 | 1
+        * 1 <= capacity <= 10
+    """
+
+[response 1]
+thought: I’ll inspect the implementation file to see what needs completing.
+action: read_file src/solution.py
+
+[response 2]
+thought: Each well requires one bucket lowering per capacity-sized group of water units, so sum the ceiling of each row’s water count divided by capacity.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -34,4 +34,4 @@
+         * grid[i][j] -> 0 | 1
+         * 1 <= capacity <= 10
+     """
+-    pass
++    return sum(math.ceil(sum(row) / capacity) for row in grid)
+
+
+[response 3]
+thought: The prior edit is recorded, but its resulting content is not available; I need to inspect the current implementation before proceeding.
+action: read_file src/solution.py
+
+[response 4]
+thought: The implementation sums the required bucket trips per well; I’ll run the specified tests to verify it.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 5]
+thought: The implementation sums the required bucket trips for each well, and the tests pass.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 7206
+elapsed_seconds: 16.04
+tool_counts: read_file=2, edit_file=1, run_tests=2, finish=1
+

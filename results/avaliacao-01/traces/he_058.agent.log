@@ -1,0 +1,71 @@
+[request]
+Complete the implementation of the function `common` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+
+
+def common(l1: list, l2: list):
+    """Return sorted unique common elements for two lists.
+    >>> common([1, 4, 3, 34, 653, 2, 5], [5, 7, 1, 5, 9, 653, 121])
+    [1, 5, 653]
+    >>> common([5, 3, 2, 8], [3, 2])
+    [2, 3]
+
+    """
+
+[response 1]
+thought: I’ll inspect the implementation and tests before making a targeted change.
+action: list_files blank
+
+[response 2]
+thought: The previous directory listing used an invalid input; I’ll list the workspace root to locate the files.
+action: list_files .
+
+[response 3]
+thought: I’ll read the function’s current implementation and nearby context before making the smallest required change.
+action: read_file src/solution.py
+
+[response 4]
+thought: The function is unimplemented; I’ll check the tests for any edge cases before editing it.
+action: read_file tests/test_solution.py
+
+[response 5]
+thought: The function should return the sorted, unique intersection of the two lists.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -8,4 +8,4 @@
+     [2, 3]
+ 
+     """
+-    pass
++    return sorted(set(l1) & set(l2))
+
+
+[response 6]
+thought: The implementation was edited; I’ll run the tests to verify it.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 7]
+thought: The implementation has been edited and the tests pass.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 6216
+elapsed_seconds: 13.23
+tool_counts: list_files=2, read_file=2, edit_file=1, run_tests=2, finish=1
+

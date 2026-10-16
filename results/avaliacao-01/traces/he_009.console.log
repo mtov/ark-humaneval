@@ -1,0 +1,43 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Complete the implementation of the function `rolling_max` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+from typing import List, Tuple
+
+
+def rolling_max(numbers: List[int]) -> List[int]:
+    """ From a given list of integers, generate a list of rolling maximum element found until given moment
+    in the sequence.
+    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])
+    [1, 2, 3, 3, 3, 4, 4]
+    """
+[1] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -7,4 +7,10 @@
+     >>> rolling_max([1, 2, 3, 2, 3, 4, 2])
+     [1, 2, 3, 3, 3, 4, 4]
+     """
+-    pass
++    result = []
++    current_max = None
++    for number in numbers:
++        if current_max is None or number > current_max:
++            current_max = number
++        result.append(current_max)
++    return result
+Authorize edit? [y/N]: [2] edit_file
+[3] read_file solution.py
+Running tests...
+Tests: passed
+[4] run_tests
+[5] finish
+Running tests...
+Tests: passed
+Total tokens: 4186
+Elapsed time: 9.22s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

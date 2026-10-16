@@ -1,0 +1,129 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Complete the implementation of the function `find_zero` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+import math
+
+
+def poly(xs: list, x: float):
+    """
+    Evaluates polynomial with coefficients xs at point x.
+    return xs[0] + xs[1] * x + xs[1] * x^2 + .... xs[n] * x^n
+    """
+    return sum([coeff * math.pow(x, i) for i, coeff in enumerate(xs)])
+
+
+def find_zero(xs: list):
+    """ xs are coefficients of a polynomial.
+    find_zero find x such that poly(x) = 0.
+    find_zero returns only only zero point, even if there are many.
+    Moreover, find_zero only takes list xs having even number of coefficients
+    and largest non zero coefficient as it guarantees
+    a solution.
+    >>> round(find_zero([1, 2]), 2) # f(x) = 1 + 2x
+    -0.5
+    >>> round(find_zero([-6, 11, -6, 1]), 2) # (x - 1) * (x - 2) * (x - 3) = -6 + 11x - 6x^2 + x^3
+    1.0
+    """
+[1] list_files blank
+[2] list_files .
+[3] list_files src
+[4] read_file solution.py
+[5] list_files tests
+[6] read_file test_solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -21,4 +21,41 @@
+     >>> round(find_zero([-6, 11, -6, 1]), 2) # (x - 1) * (x - 2) * (x - 3) = -6 + 11x - 6x^2 + x^3
+     1.0
+     """
+-    pass
++    def evaluate(x):
++        value = 0
++        for coeff in reversed(xs):
++            value = value * x + coeff
++        return value
++
++    value_at_zero = evaluate(0)
++    if value_at_zero == 0:
++        return 0
++
++    # An odd-degree polynomial has opposite signs at the two infinities.
++    # Search in the direction where its value must eventually change sign.
++    if value_at_zero > 0:
++        right = 0
++        left = -1
++        while evaluate(left) > 0:
++            left *= 2
++    else:
++        left = 0
++        right = 1
++        while evaluate(right) < 0:
++            right *= 2
++
++    left_value = evaluate(left)
++    for _ in range(200):
++        middle = (left + right) / 2
++        if middle == left or middle == right:
++            return middle
++        middle_value = evaluate(middle)
++        if abs(middle_value) < 1e-12:
++            return middle
++        if (left_value > 0) == (middle_value > 0):
++            left = middle
++            left_value = middle_value
++        else:
++            right = middle
++
++    return (left + right) / 2
+Authorize edit? [y/N]: [7] edit_file
+Running tests...
+Tests: failed
+[8] run_tests
+[9] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -32,17 +32,20 @@
+         return 0
+ 
+     # An odd-degree polynomial has opposite signs at the two infinities.
+-    # Search in the direction where its value must eventually change sign.
+-    if value_at_zero > 0:
++    # Search on the side where its value must eventually differ from its
++    # value at zero.
++    leading = next(coeff for coeff in reversed(xs) if coeff != 0)
++    search_right = (leading > 0) != (value_at_zero > 0)
++    if search_right:
++        left = 0
++        right = 1
++        while (evaluate(right) > 0) == (value_at_zero > 0):
++            right *= 2
++    else:
+         right = 0
+         left = -1
+-        while evaluate(left) > 0:
++        while (evaluate(left) > 0) == (value_at_zero > 0):
+             left *= 2
+-    else:
+-        left = 0
+-        right = 1
+-        while evaluate(right) < 0:
+-            right *= 2
+ 
+     left_value = evaluate(left)
+     for _ in range(200):
+Authorize edit? [y/N]: [10] edit_file
+Running tests...
+Tests: passed
+[11] run_tests
+[12] finish
+Running tests...
+Tests: passed
+Total tokens: 15892
+Elapsed time: 1m 7.15s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

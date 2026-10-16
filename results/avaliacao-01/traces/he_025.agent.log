@@ -1,0 +1,87 @@
+[request]
+Complete the implementation of the function `factorize` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+from typing import List
+
+
+def factorize(n: int) -> List[int]:
+    """ Return list of prime factors of given integer in the order from smallest to largest.
+    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.
+    Input number should be equal to the product of all factors
+    >>> factorize(8)
+    [2, 2, 2]
+    >>> factorize(25)
+    [5, 5]
+    >>> factorize(70)
+    [2, 5, 7]
+    """
+
+[response 1]
+thought: I’ll inspect the solution and tests to understand the expected behavior.
+action: list_files src/solution.py and tests/test_solution.py
+
+[response 2]
+thought: The combined path lookup failed, so I’ll inspect the workspace root to locate the source and tests.
+action: list_files .
+
+[response 3]
+thought: I’ll inspect the implementation and tests before making the change.
+action: read_file src/solution.py
+
+[response 4]
+thought: I’ve read the function; I’ll check the tests to see which input cases the implementation should cover.
+action: list_files tests/solution.py
+
+[response 5]
+thought: Use trial division from the smallest factor upward, preserving repeated factors; return an empty list for 1.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -12,4 +12,16 @@
+     >>> factorize(70)
+     [2, 5, 7]
+     """
+-    pass
++    factors = []
++    divisor = 2
++
++    while divisor * divisor <= n:
++        while n % divisor == 0:
++            factors.append(divisor)
++            n //= divisor
++        divisor += 1
++
++    if n > 1:
++        factors.append(n)
++
++    return factors
+
+
+[response 6]
+thought: The implementation was edited already; run the tests to verify it.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 7]
+thought: The implementation was edited and the test suite passed.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 6015
+elapsed_seconds: 12.39
+tool_counts: list_files=3, read_file=1, edit_file=1, run_tests=2, finish=1
+

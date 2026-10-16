@@ -1,0 +1,10 @@
+# Include evaluation artifacts; exclude runtime copies, locks and other scratch files.
+results/*/*
+!results/*/manifest.json
+!results/*/results.csv
+!results/*/traces/
+!results/*/workspaces/
+__pycache__/
+.pytest_cache/
+*.pyc
+.DS_Store

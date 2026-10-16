@@ -1,0 +1,82 @@
+[request]
+Complete the implementation of the function `closest_integer` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+
+def closest_integer(value):
+    '''
+    Create a function that takes a value (string) representing a number
+    and returns the closest integer to it. If the number is equidistant
+    from two integers, round it away from zero.
+
+    Examples
+    >>> closest_integer("10")
+    10
+    >>> closest_integer("15.3")
+    15
+
+    Note:
+    Rounding away from zero means that if the given number is equidistant
+    from two integers, the one you should return is the one that is the
+    farthest from zero. For example closest_integer("14.5") should
+    return 15 and closest_integer("-14.5") should return -15.
+    '''
+
+[response 1]
+thought: I’ll inspect the workspace files to locate the implementation and tests.
+action: list_files src/solution.py, tests/test_solution.py
+
+[response 2]
+thought: The previous listing did not locate the requested files; I’ll inspect the workspace root to find the project files.
+action: list_files .
+
+[response 3]
+thought: The workspace contains `src` and `tests`; I’ll inspect the target implementation.
+action: read_file src/solution.py
+
+[response 4]
+thought: I’ll inspect the tests to check for any edge cases beyond the stated rounding behavior.
+action: read_file tests/test_solution.py
+
+[response 5]
+thought: Use Decimal rounding with ROUND_HALF_UP to handle exact ties away from zero without floating-point errors.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -17,4 +17,6 @@
+     farthest from zero. For example closest_integer("14.5") should
+     return 15 and closest_integer("-14.5") should return -15.
+     '''
+-    pass
++    from decimal import Decimal, ROUND_HALF_UP
++
++    return int(Decimal(value).quantize(Decimal("1"), rounding=ROUND_HALF_UP))
+
+
+[response 6]
+thought: Run the provided tests to verify the implementation.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 7]
+thought: The implementation is complete, and the tests pass.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 6895
+elapsed_seconds: 15.76
+tool_counts: list_files=2, read_file=2, edit_file=1, run_tests=2, finish=1
+

@@ -1,0 +1,101 @@
+[request]
+Complete the implementation of the function `intersection` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+
+def intersection(interval1, interval2):
+    """You are given two intervals,
+    where each interval is a pair of integers. For example, interval = (start, end) = (1, 2).
+    The given intervals are closed which means that the interval (start, end)
+    includes both start and end.
+    For each given interval, it is assumed that its start is less or equal its end.
+    Your task is to determine whether the length of intersection of these two 
+    intervals is a prime number.
+    Example, the intersection of the intervals (1, 3), (2, 4) is (2, 3)
+    which its length is 1, which not a prime number.
+    If the length of the intersection is a prime number, return "YES",
+    otherwise, return "NO".
+    If the two intervals don't intersect, return "NO".
+
+
+    [input/output] samples:
+    intersection((1, 2), (2, 3)) ==> "NO"
+    intersection((-1, 1), (0, 4)) ==> "NO"
+    intersection((-3, -1), (-5, 5)) ==> "YES"
+    """
+
+[response 1]
+thought: I’ll inspect the workspace files to locate the implementation and tests.
+action: list_files blank
+
+[response 2]
+thought: The initial file listing did not succeed, so I’ll list the workspace root to locate the implementation and tests.
+action: list_files .
+
+[response 3]
+thought: I’ll inspect the solution and tests to understand the current implementation and expected behavior.
+action: list_files src
+
+[response 4]
+thought: I’ll inspect the existing implementation before making a targeted change.
+action: read_file src/solution.py
+
+[response 5]
+thought: I’ve read the function and its specification; I’ll check the tests before implementing it.
+action: list_files tests
+
+[response 6]
+thought: I’ll inspect the tests to confirm the expected interval-length and prime-number behavior before implementing the function.
+action: read_file tests/test_solution.py
+
+[response 7]
+thought: The intersection length is the difference between its endpoints; return “YES” only when that positive length is prime.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -19,4 +19,15 @@
+     intersection((-1, 1), (0, 4)) ==> "NO"
+     intersection((-3, -1), (-5, 5)) ==> "YES"
+     """
+-    pass
++    start = max(interval1[0], interval2[0])
++    end = min(interval1[1], interval2[1])
++    length = end - start
++
++    if length < 2:
++        return "NO"
++
++    for divisor in range(2, int(length ** 0.5) + 1):
++        if length % divisor == 0:
++            return "NO"
++
++    return "YES"
+
+
+[response 8]
+thought: The implementation has already been edited; run the test suite to check it.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 9]
+thought: The implementation has been updated and the provided tests pass.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 9650
+elapsed_seconds: 17.00
+tool_counts: list_files=4, read_file=2, edit_file=1, run_tests=2, finish=1
+

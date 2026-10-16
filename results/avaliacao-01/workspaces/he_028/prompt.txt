@@ -1,0 +1,13 @@
+Complete the implementation of the function `concatenate` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+from typing import List
+
+
+def concatenate(strings: List[str]) -> str:
+    """ Concatenate list of strings into a single string
+    >>> concatenate([])
+    ''
+    >>> concatenate(['a', 'b', 'c'])
+    'abc'
+    """
+

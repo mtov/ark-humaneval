@@ -1,0 +1,72 @@
+[request]
+Complete the implementation of the function `find_closest_elements` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+from typing import List, Tuple
+
+
+def find_closest_elements(numbers: List[float]) -> Tuple[float, float]:
+    """ From a supplied list of numbers (of length at least two) select and return two that are the closest to each
+    other and return them in order (smaller number, larger number).
+    >>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.2])
+    (2.0, 2.2)
+    >>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.0])
+    (2.0, 2.0)
+    """
+
+[response 1]
+thought: I’ll inspect the workspace files to locate the implementation and tests.
+action: list_files blank
+
+[response 2]
+thought: The initial listing did not work because the tool interpreted blank as a path; I’ll list the workspace root to locate the requested files.
+action: list_files .
+
+[response 3]
+thought: I’ll read the implementation before editing it.
+action: read_file src/solution.py
+
+[response 4]
+thought: Sort the numbers and compare adjacent pairs; the closest pair must be adjacent in sorted order.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -9,4 +9,8 @@
+     >>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.0])
+     (2.0, 2.0)
+     """
+-    pass
++    ordered = sorted(numbers)
++    return min(
++        zip(ordered, ordered[1:]),
++        key=lambda pair: pair[1] - pair[0],
++    )
+
+
+[response 5]
+thought: The implementation has been edited; run the tests to verify it.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 6]
+thought: The implementation has been edited and the tests pass.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 5301
+elapsed_seconds: 10.94
+tool_counts: list_files=2, read_file=1, edit_file=1, run_tests=2, finish=1
+

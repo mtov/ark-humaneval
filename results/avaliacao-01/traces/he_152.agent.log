@@ -1,0 +1,77 @@
+[request]
+Complete the implementation of the function `compare` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+
+def compare(game,guess):
+    """I think we all remember that feeling when the result of some long-awaited
+    event is finally known. The feelings and thoughts you have at that moment are
+    definitely worth noting down and comparing.
+    Your task is to determine if a person correctly guessed the results of a number of matches.
+    You are given two arrays of scores and guesses of equal length, where each index shows a match. 
+    Return an array of the same length denoting how far off each guess was. If they have guessed correctly,
+    the value is 0, and if not, the value is the absolute difference between the guess and the score.
+    
+    
+    example:
+
+    compare([1,2,3,4,5,1],[1,2,3,4,2,-2]) -> [0,0,0,0,3,3]
+    compare([0,5,0,0,0,4],[4,1,1,0,0,-2]) -> [4,4,1,0,0,6]
+    """
+
+[response 1]
+thought: I’ll inspect the workspace files to locate the implementation and tests.
+action: list_files blank
+
+[response 2]
+thought: I need to inspect the workspace files to locate the function and tests.
+action: list_files .
+
+[response 3]
+thought: I’ll read the implementation before making a change.
+action: list_files src/solution.py
+
+[response 4]
+thought: I need to inspect the existing implementation before making the required change.
+action: read_file src/solution.py
+
+[response 5]
+thought: The function should return the absolute difference for each corresponding score and guess.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -14,4 +14,4 @@
+     compare([1,2,3,4,5,1],[1,2,3,4,2,-2]) -> [0,0,0,0,3,3]
+     compare([0,5,0,0,0,4],[4,1,1,0,0,-2]) -> [4,4,1,0,0,6]
+     """
+-    pass
++    return [abs(score - prediction) for score, prediction in zip(game, guess)]
+
+
+[response 6]
+thought: The function was previously read and an edit was applied; I’ll run the tests to check the implementation.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 7]
+thought: The implementation has been edited and the tests pass.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 6868
+elapsed_seconds: 15.85
+tool_counts: list_files=3, read_file=1, edit_file=1, run_tests=2, finish=1
+

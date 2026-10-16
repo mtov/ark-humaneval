@@ -1,0 +1,47 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Complete the implementation of the function `rounded_avg` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+
+def rounded_avg(n, m):
+    """You are given two positive integers n and m, and your task is to compute the
+    average of the integers from n through m (including n and m). 
+    Round the answer to the nearest integer and convert that to binary.
+    If n is greater than m, return -1.
+    Example:
+    rounded_avg(1, 5) => "0b11"
+    rounded_avg(7, 5) => -1
+    rounded_avg(10, 20) => "0b1111"
+    rounded_avg(20, 33) => "0b11010"
+    """
+[1] read_file solution.py
+[2] read_file test_solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -10,4 +10,11 @@
+     rounded_avg(10, 20) => "0b1111"
+     rounded_avg(20, 33) => "0b11010"
+     """
+-    pass
++    if n > m:
++        return -1
++
++    total = n + m
++    average = total // 2
++    if total % 2 and average % 2:
++        average += 1
++    return bin(average)
+Authorize edit? [y/N]: [3] edit_file
+Running tests...
+Tests: passed
+[4] run_tests
+[5] finish
+Running tests...
+Tests: passed
+Total tokens: 5378
+Elapsed time: 14.76s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

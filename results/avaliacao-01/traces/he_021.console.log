@@ -1,0 +1,41 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Complete the implementation of the function `rescale_to_unit` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+from typing import List
+
+
+def rescale_to_unit(numbers: List[float]) -> List[float]:
+    """ Given list of numbers (of at least two elements), apply a linear transform to that list,
+    such that the smallest number will become 0 and the largest will become 1
+    >>> rescale_to_unit([1.0, 2.0, 3.0, 4.0, 5.0])
+    [0.0, 0.25, 0.5, 0.75, 1.0]
+    """
+[1] list_files blank
+[2] list_files .
+[3] read_file solution.py
+[4] read_file test_solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -7,4 +7,6 @@
+     >>> rescale_to_unit([1.0, 2.0, 3.0, 4.0, 5.0])
+     [0.0, 0.25, 0.5, 0.75, 1.0]
+     """
+-    pass
++    minimum = min(numbers)
++    maximum = max(numbers)
++    return [(number - minimum) / (maximum - minimum) for number in numbers]
+Authorize edit? [y/N]: [5] edit_file
+Running tests...
+Tests: passed
+[6] run_tests
+[7] finish
+Running tests...
+Tests: passed
+Total tokens: 6646
+Elapsed time: 14.22s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

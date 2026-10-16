@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "runner_sha256": "3ff8554fea5402046389e2bda6b360011428327f8bb9e864e7be4d431b79b3c1",
+  "ark_dir": "/Users/mtov/ark-project/ark",
+  "python": "/Users/mtov/ark-project/ark/.venv/bin/python",
+  "python_environment": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]\n9.1.1 2.49.0",
+  "ark_files_sha256": {
+    "run_ark.py": "390c62827e192613314ffb179ea54dfdff636a27b81d5c381d73d1531620535f",
+    "config/config.json": "22ecf2a44460757a6d5303ffe9cf9a2f829770439d280feec06bf8893e845f39",
+    "config/system_prompt.txt": "12434a8558c3494f42817331f8c844d2100cd1804d47891db05684074baf832d",
+    "src/ark/__init__.py": "3c78788ea0fb8b468bf16f215d385ccca713e31b0d6625da9c1c4e1f920e5b92",
+    "src/ark/__main__.py": "08653ce83ede22c800b4ef2f41e2d90ba134a13addcaaf447c02c3e35649976c",
+    "src/ark/agentic_loop.py": "46ced8c76cc7da158c9afed7907803e10e9f97742f068e800b13bc013242e2e2",
+    "src/ark/cli_output.py": "69df7b49548f5aca7de51fa1dcbb2af9450a6f2bd66fbd29548633a6264f5760",
+    "src/ark/guards.py": "66f7c5d15438a0711534dd187e804172bee3bd7a737619329d493a073f649e38",
+    "src/ark/inputs.py": "37441e952e64e5124110f1341244bc95d2e53e40ce8bfbc6777ea60a527cb28a",
+    "src/ark/memory.py": "234328387e69b7dc9dbee5e83c02735574d4ab5ffa9b570960d2b2d52c940720",
+    "src/ark/models.py": "0924de32479f6a83c2e7b953ae8dfe05548d9f6540e8af58dec033cec0a27010",
+    "src/ark/protocol.py": "75d8be6955500fbc68a517aeea32ba99ae6d6ae527d7e642a775c3c86afd3d3f",
+    "src/ark/tools.py": "101232abfba2ff22393ef788affc364a361dbb70fde2854b6bf512e977e69d91",
+    "src/ark/traces.py": "6bf05bd0f6fe751d233f0e8b785e3358b60816dc943d210fd62ed57a8a650543"
+  },
+  "task_files_sha256": {
+    "he_000/prompt.txt": "458209cb49c7f244f64228b2aa08494d09212780743be7e3b9d7fdcfd3f4c672",
+    "he_000/src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "he_000/src/solution.py": "db50aa2664a3a59ac059ea42a8905bc496c993a5d85c9d5dfcd2e54b95c0254a",
+    "he_000/tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "he_000/tests/test_solution.py": "88ca694aba07f54a8b4fa15cd6a8a7aa670c581134ebe778c96370ca59664d9a"
+  },
+  "tasks": [
+    "he_000"
+  ],
+  "timeout": 1800,
+  "test_timeout": 30,
+  "approval": "stdin: yes"
+}

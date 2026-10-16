@@ -1,0 +1,82 @@
+[request]
+Complete the implementation of the function `prod_signs` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+
+def prod_signs(arr):
+    """
+    You are given an array arr of integers and you need to return
+    sum of magnitudes of integers multiplied by product of all signs
+    of each number in the array, represented by 1, -1 or 0.
+    Note: return None for empty arr.
+
+    Example:
+    >>> prod_signs([1, 2, 2, -4]) == -9
+    >>> prod_signs([0, 1]) == 0
+    >>> prod_signs([]) == None
+    """
+
+[response 1]
+thought: I’ll inspect the solution and tests to understand the current implementation and expected behavior.
+action: list_files blank
+
+[response 2]
+thought: The previous listing used an invalid `blank` path, so I’ll list the workspace root to locate the implementation and tests.
+action: list_files .
+
+[response 3]
+thought: I’ll inspect the function implementation before making the required change.
+action: read_file src/solution.py
+
+[response 4]
+thought: Return `None` for an empty array; otherwise multiply the sum of magnitudes by the product of the elements’ signs.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -11,4 +11,16 @@
+     >>> prod_signs([0, 1]) == 0
+     >>> prod_signs([]) == None
+     """
+-    pass
++    if not arr:
++        return None
++
++    magnitude_sum = sum(abs(number) for number in arr)
++    sign_product = 1
++    for number in arr:
++        if number == 0:
++            sign_product = 0
++            break
++        if number < 0:
++            sign_product *= -1
++
++    return magnitude_sum * sign_product
+
+
+[response 5]
+thought: The implementation was already edited; I’ll run the requested tests to check whether it passes.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 6]
+thought: The implementation has been applied and the tests pass.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 5043
+elapsed_seconds: 12.31
+tool_counts: list_files=2, read_file=1, edit_file=1, run_tests=2, finish=1
+

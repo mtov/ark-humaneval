@@ -1,0 +1,75 @@
+[request]
+Complete the implementation of the function `file_name_check` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+
+def file_name_check(file_name):
+    """Create a function which takes a string representing a file's name, and returns
+    'Yes' if the the file's name is valid, and returns 'No' otherwise.
+    A file's name is considered to be valid if and only if all the following conditions 
+    are met:
+    - There should not be more than three digits ('0'-'9') in the file's name.
+    - The file's name contains exactly one dot '.'
+    - The substring before the dot should not be empty, and it starts with a letter from 
+    the latin alphapet ('a'-'z' and 'A'-'Z').
+    - The substring after the dot should be one of these: ['txt', 'exe', 'dll']
+    Examples:
+    file_name_check("example.txt") # => 'Yes'
+    file_name_check("1example.dll") # => 'No' (the name should start with a latin alphapet letter)
+    """
+
+[response 1]
+thought: I’ll inspect the existing implementation and tests before making a targeted change.
+action: read_file src/solution.py
+
+[response 2]
+thought: Replace the placeholder with checks for the dot count, ASCII-letter prefix, allowed extension, and maximum digit count.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -13,4 +13,15 @@
+     file_name_check("example.txt") # => 'Yes'
+     file_name_check("1example.dll") # => 'No' (the name should start with a latin alphapet letter)
+     """
+-    pass
++    if not isinstance(file_name, str) or file_name.count(".") != 1:
++        return "No"
++
++    name, extension = file_name.split(".")
++    if not name or not ("a" <= name[0] <= "z" or "A" <= name[0] <= "Z"):
++        return "No"
++    if extension not in ("txt", "exe", "dll"):
++        return "No"
++    if sum(character.isdigit() and character.isascii() for character in file_name) > 3:
++        return "No"
++
++    return "Yes"
+
+
+[response 3]
+thought: The implementation was edited earlier, so I’ll run the requested tests to check whether it satisfies the specification.
+action: run_tests blank
+
+[tests]
+status: passed
+
+[response 4]
+thought: The implementation has been updated and the tests pass.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 4019
+elapsed_seconds: 15.82
+tool_counts: read_file=1, edit_file=1, run_tests=2, finish=1
+

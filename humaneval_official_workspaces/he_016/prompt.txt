@@ -1,0 +1,12 @@
+Complete the implementation of the function `count_distinct_characters` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+
+
+def count_distinct_characters(string: str) -> int:
+    """ Given a string, find out how many distinct characters (regardless of case) does it consist of
+    >>> count_distinct_characters('xyzXYZ')
+    3
+    >>> count_distinct_characters('Jerry')
+    4
+    """
+

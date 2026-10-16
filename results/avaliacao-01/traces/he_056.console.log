@@ -1,0 +1,51 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Complete the implementation of the function `correct_bracketing` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+
+
+def correct_bracketing(brackets: str):
+    """ brackets is a string of "<" and ">".
+    return True if every opening bracket has a corresponding closing bracket.
+
+    >>> correct_bracketing("<")
+    False
+    >>> correct_bracketing("<>")
+    True
+    >>> correct_bracketing("<<><>>")
+    True
+    >>> correct_bracketing("><<>")
+    False
+    """
+[1] list_files blank
+[2] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -13,4 +13,12 @@
+     >>> correct_bracketing("><<>")
+     False
+     """
+-    pass
++    balance = 0
++    for bracket in brackets:
++        if bracket == "<":
++            balance += 1
++        else:
++            balance -= 1
++            if balance < 0:
++                return False
++    return balance == 0
+Authorize edit? [y/N]: [3] edit_file
+Running tests...
+Tests: passed
+[4] run_tests
+[5] finish
+Running tests...
+Tests: passed
+Total tokens: 3978
+Elapsed time: 9.85s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

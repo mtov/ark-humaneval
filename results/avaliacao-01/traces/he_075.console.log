@@ -1,0 +1,52 @@
+=== STDOUT ===
+Using OpenAI model: gpt-6-luna
+Prompt:
+Complete the implementation of the function `is_multiply_prime` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+
+def is_multiply_prime(a):
+    """Write a function that returns true if the given number is the multiplication of 3 prime numbers
+    and false otherwise.
+    Knowing that (a) is less then 100. 
+    Example:
+    is_multiply_prime(30) == True
+    30 = 2 * 3 * 5
+    """
+[1] list_files blank
+[2] read_file solution.py
+Proposed edit: src/solution.py
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -7,4 +7,19 @@
+     is_multiply_prime(30) == True
+     30 = 2 * 3 * 5
+     """
+-    pass
++    if a < 2:
++        return False
++
++    prime_factor_count = 0
++    divisor = 2
++
++    while divisor * divisor <= a:
++        while a % divisor == 0:
++            a //= divisor
++            prime_factor_count += 1
++        divisor += 1
++
++    if a > 1:
++        prime_factor_count += 1
++
++    return prime_factor_count == 3
+Authorize edit? [y/N]: [3] edit_file
+Running tests...
+Tests: passed
+[4] run_tests
+[5] finish
+Running tests...
+Tests: passed
+Total tokens: 3958
+Elapsed time: 9.93s
+Ark result: success. Changes applied and final tests passed.
+
+=== STDERR ===

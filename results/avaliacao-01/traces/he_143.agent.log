@@ -1,0 +1,97 @@
+[request]
+Complete the implementation of the function `words_in_sentence` in `src/solution.py` according to its specification. Make sure all tests in `tests/test_solution.py` pass.
+
+
+def words_in_sentence(sentence):
+    """
+    You are given a string representing a sentence,
+    the sentence contains some words separated by a space,
+    and you have to return a string that contains the words from the original sentence,
+    whose lengths are prime numbers,
+    the order of the words in the new string should be the same as the original one.
+
+    Example 1:
+        Input: sentence = "This is a test"
+        Output: "is"
+
+    Example 2:
+        Input: sentence = "lets go for swimming"
+        Output: "go for"
+
+    Constraints:
+        * 1 <= len(sentence) <= 100
+        * sentence contains only letters
+    """
+
+[response 1]
+thought: I’ll inspect the solution file and its tests before implementing the function.
+action: list_files src/solution.py, tests/test_solution.py
+
+[response 2]
+thought: The prior lookup did not locate the files, so I’ll inspect the workspace root to find the project files.
+action: list_files .
+
+[response 3]
+thought: I’ll inspect the function and its tests before making the implementation change.
+action: read_file src/solution.py
+
+[response 4]
+thought: Replace the placeholder with prime-length filtering while preserving the original word order.
+action: edit_file src/solution.py
+
+[edit_file]
+status: succeeded
+path: src/solution.py
+diff:
+--- a/src/solution.py
++++ b/src/solution.py
+@@ -19,4 +19,23 @@
+         * 1 <= len(sentence) <= 100
+         * sentence contains only letters
+     """
+-    pass
++    words = sentence.split()
++    prime_length_words = []
++
++    for word in words:
++        length = len(word)
++        if length < 2:
++            continue
++
++        is_prime = True
++        divisor = 2
++        while divisor * divisor <= length:
++            if length % divisor == 0:
++                is_prime = False
++                break
++            divisor += 1
++
++        if is_prime:
++            prime_length_words.append(word)
++
++    return " ".join(prime_length_words)
+
+
+[response 5]
+thought: The implementation was edited; run the requested tests to check that they pass.
+action: run_tests
+
+[tests]
+status: passed
+
+[response 6]
+thought: The implementation was applied, and the tests passed.
+action: finish
+
+[finish]
+status: completed
+stage: finish
+
+[workspace]
+status: committed
+
+[run_summary]
+total_tokens: 5337
+elapsed_seconds: 13.67
+tool_counts: list_files=2, read_file=1, edit_file=1, run_tests=2, finish=1
+
