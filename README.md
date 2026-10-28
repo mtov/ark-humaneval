@@ -1,7 +1,16 @@
 # HumanEval with the Current Ark
 
 Run the 164 tasks included in this project using the Ark code and configuration
-in `../ark`. Supports macOS and Linux with Python 3.11 or later.
+in `../ark`. Requires macOS or Linux and Python 3.11 or later.
+The runner targets the Ark layout described below; compatibility with future Ark
+changes must be checked before a new run.
+
+There are two stages:
+
+1. **Generate solutions:** `run_benchmark.py` calls Ark and evaluates its output
+   with the visible tests. This stage makes model requests.
+2. **Evaluate saved solutions:** `evaluate_solutions.py` runs visible and hidden
+   tests offline, without model requests or repairs.
 
 ## Task Prompt Format
 
@@ -14,16 +23,19 @@ Implement find_zero in src/solution.py according to its docstring.
 
 The prompt does not repeat the source code, specification, examples, or test
 instructions. Ark reads the function and its specification from `src/solution.py`.
-Source files, helper functions, specification text, and tests are unchanged.
+Changing the prompt format did not change source files, helper functions,
+specification text, or tests.
 In `he_115`, the existing specification string follows a local import, so Python
 does not expose it as `__doc__`; the text remains available in the function body.
 
 The previous evaluations in `results/piloto-real/` and `results/avaliacao-01/`
 used prompts that included source code. Their artifacts and manifests are
 preserved. **Use a new run name for the generic prompts**: the old runs cannot
-be resumed with changed task files. The examples below use
-`generic-prompts-pilot` and `generic-prompts-01` to keep the new evaluations
-separate from the previous results.
+be resumed with changed task files. The completed generic-prompt evaluation is
+preserved in
+`results/generic-prompts-01/`. The generation examples below use `benchmark-pilot-01`
+and `benchmark-01` for new runs. If either name already exists locally, choose
+an unused name and use it consistently.
 
 ## How to Run the Benchmark
 
@@ -38,7 +50,7 @@ ark-project/
 
 ### 1. Open the Project Directory
 
-On this machine:
+Use your local checkout path. On this machine:
 
 ```bash
 cd /Users/mtov/ark-project/human-eval-all
@@ -50,7 +62,7 @@ If Ark's environment does not exist yet, follow [Environment Setup](#environment
 
 ### 2. Set the API Key in Your Terminal
 
-The current configuration reads the key from `OPENAI_API_KEY`:
+The supplied Ark configuration reads the key from `OPENAI_API_KEY`:
 
 ```bash
 export OPENAI_API_KEY="your-api-key"
@@ -61,6 +73,7 @@ terminal and its child processes. Set it again if you open another terminal to
 start the benchmark.
 
 The model and endpoint are defined in `../ark/config/config.json`.
+If `openai_api_key_env` names a different variable, export that variable instead.
 The system prompt comes from `../ark/config/system_prompt.txt`. The runner copies
 this configuration at the start of each run, so make any changes before starting.
 
@@ -78,21 +91,21 @@ not verify whether the key is valid or whether the API provides access to the mo
 ### 4. Run One Task as a Pilot
 
 ```bash
-../ark/.venv/bin/python run_benchmark.py --run-name generic-prompts-pilot --task he_000
+../ark/.venv/bin/python run_benchmark.py --run-name benchmark-pilot-01 --task he_000
 ```
 
 This command makes real model requests. Wait for the task to finish.
 A successful pilot reports `PASS` and a `1/1 PASS` summary.
-Results are saved in `results/generic-prompts-pilot/`.
+Results are saved in `results/benchmark-pilot-01/`.
 
 If the task reports `ERROR`, `FAIL`, or `TIMEOUT`, inspect the CSV and the files in
-`results/generic-prompts-pilot/traces/` before starting the full run. To repeat the pilot
-after a failure has been recorded, choose another name, such as `generic-prompts-pilot-02`.
+`results/benchmark-pilot-01/traces/` before starting the full run. To repeat the pilot
+after a failure has been recorded, choose another name, such as `benchmark-pilot-02`.
 
 ### 5. Run All 164 Tasks
 
 ```bash
-../ark/.venv/bin/python run_benchmark.py --run-name generic-prompts-01
+../ark/.venv/bin/python run_benchmark.py --run-name benchmark-01
 ```
 
 **This command runs the full benchmark.** Without `--task` or `--limit`, it
@@ -104,15 +117,15 @@ The terminal shows each task as it starts and its result when it finishes.
 Detailed logs are saved after the task runs; they are not streamed live.
 At the end, the terminal reports the number and proportion of tasks with `PASS`.
 
-The full run uses `results/generic-prompts-01/`, separate from the pilot. To inspect
+The full run uses `results/benchmark-01/`, separate from the pilot. To inspect
 the CSV in another terminal, open this project's root directory and run:
 
 ```bash
-cat results/generic-prompts-01/results.csv
+cat results/benchmark-01/results.csv
 ```
 
-Each task's final code is saved in `results/generic-prompts-01/workspaces/`, and its
-logs are saved in `results/generic-prompts-01/traces/`.
+Each task's final code is saved in `results/benchmark-01/workspaces/`, and its
+logs are saved in `results/benchmark-01/traces/`.
 
 ### 6. Stop or Resume a Run
 
@@ -120,7 +133,7 @@ To stop, press **Ctrl+C** in the terminal running the benchmark. To resume,
 set the API key in your terminal and repeat **the same command with the same options**:
 
 ```bash
-../ark/.venv/bin/python run_benchmark.py --run-name generic-prompts-01
+../ark/.venv/bin/python run_benchmark.py --run-name benchmark-01
 ```
 
 Tasks already recorded in the CSV, including failures and timeouts, are skipped.
@@ -129,7 +142,7 @@ A task interrupted by Ctrl+C remains pending and will run again.
 To start a new evaluation from scratch, choose another name:
 
 ```bash
-../ark/.venv/bin/python run_benchmark.py --run-name generic-prompts-02
+../ark/.venv/bin/python run_benchmark.py --run-name benchmark-02
 ```
 
 Keep Ark, the tasks, and the options unchanged when resuming a run.
@@ -138,14 +151,19 @@ or the time limits, use a new run name.
 
 ## Environment Setup
 
-**If `../ark/.venv/bin/python` already works, you do not need to recreate the environment.**
-If it does not exist yet, create it using Python 3.11 or later from this project's
-root directory:
+**If `--check` succeeds and the required key is present, skip environment setup.**
+If the virtual environment does not exist yet, create it using Python 3.11 or
+later from this project's root directory. If it already exists but lacks the
+required packages, run only the `pip install` command:
 
 ```bash
 python3 -m venv ../ark/.venv
 ../ark/.venv/bin/python -m pip install -r ../ark/requirements.txt
 ```
+
+Ark must provide `run_ark.py`, `src/ark/agentic_loop.py`,
+`config/config.json`, and `config/system_prompt.txt`. Installing the requirements
+does not create these files; use your existing Ark checkout.
 
 The tasks are already included. You do not need to generate the workspaces or
 install the `human_eval` package.
@@ -222,8 +240,9 @@ the current version without overwriting `../ark/ark-workspace` or
 The manifest records paths, Python/Pytest/OpenAI client versions, options, and
 hashes of the runner, Ark code and configuration, and selected task files.
 If these inputs change, resuming is rejected: choose another run name to avoid
-mixing versions. The runner does not record the API key. Ark's configuration and
-traces are copied in full and may contain endpoint information.
+mixing versions. The runner does not intentionally write the environment
+variable holding the API key. Ark's configuration and traces are copied in full; inspect the files
+before publishing them, since their contents depend on Ark and your configuration.
 
 The CSV is saved after each task and contains:
 
@@ -261,9 +280,13 @@ and `encode_shift` were added, respectively. The assertions were preserved.
 To manually check a saved solution, start from the project root:
 
 ```bash
-cd results/generic-prompts-01/workspaces/he_000
-../../../../../ark/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_solution.py
+(
+  cd results/benchmark-01/workspaces/he_000
+  ../../../../../ark/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_solution.py
+)
 ```
+
+The subshell keeps your terminal in the project root for subsequent commands.
 
 ## Hidden-Test Evaluation
 
@@ -278,29 +301,57 @@ See [evaluation/README.md](evaluation/README.md) for sources, licenses, excluded
 cases, numerical tolerances, ambiguous specifications, and isolation limits.
 This is a local derivative, not an official HumanEval+ score.
 
-From the project root, first validate the references through both suites:
+The committed reports record **164/164 visible passes** and **161/164 combined
+passes (98.17%)** for `generic-prompts-01`. The hidden failures are `he_076`,
+`he_109`, and `he_145`. Of the 121,129 available cases, 118,481 were checked
+against these solutions because checking stops at the first failure per task.
+
+To read the existing report without executing tests:
 
 ```bash
-../ark/.venv/bin/python evaluate_solutions.py --validate-references
+cat evaluation_results/generic-prompts-01/summary.json
 ```
 
-Check that all 164 references have `overall=PASS`. Then evaluate the saved
-generic-prompt run, without generating new solutions:
+To perform a fresh evaluation, use unused output directories. From the project
+root, first validate the references through both suites:
 
 ```bash
-../ark/.venv/bin/python evaluate_solutions.py --run results/generic-prompts-01
-cat evaluation_results/generic-prompts-01/summary.json
+../ark/.venv/bin/python evaluate_solutions.py --validate-references \
+  --output evaluation_results/reference-review-01
+cat evaluation_results/reference-review-01/summary.json
+```
+
+Check that the summary contains `"tasks": 164` and `"overall": {"PASS": 164}`.
+A zero exit code alone does not establish that the references passed. Then
+evaluate the saved generic-prompt run, without generating new solutions:
+
+```bash
+../ark/.venv/bin/python evaluate_solutions.py --run results/generic-prompts-01 \
+  --output evaluation_results/generic-prompts-review-01
+cat evaluation_results/generic-prompts-review-01/summary.json
 ```
 
 The completed reevaluation and its reviewed failure cases are summarized in
 [HIDDEN_EVALUATION_REPORT.md](HIDDEN_EVALUATION_REPORT.md).
 
 For a future benchmark run, run the generation command first and invoke this
-evaluator only after generation has finished. Point `--run` at that run's results.
+evaluator only after generation has finished. For example, after completing
+`benchmark-01`:
+
+```bash
+../ark/.venv/bin/python evaluate_solutions.py --run results/benchmark-01
+```
+
+No API key is needed for offline evaluation. It uses Python and Pytest; an
+alternative environment can be selected with `--python /path/to/venv/bin/python`.
 Hidden assets are kept under the separate project-level `evaluation/` directory;
 they are never copied into the task or Ark runtime workspaces.
 
-Reports are saved separately from the original benchmark artifacts:
+Without `--output`, reports default to `evaluation_results/<source-run-name>/`,
+or `evaluation_results/reference-validation/` for reference validation. Reusing
+a completed output with identical inputs skips its recorded tasks, including
+failures; it does not execute the tests again. Reports are saved separately from
+the original benchmark artifacts. The committed report has this layout:
 
 ```text
 evaluation_results/generic-prompts-01/
@@ -331,17 +382,29 @@ cases, environment, source files, task selection, or limits require a new output
   --output evaluation_results/he145-review --task he_145
 ```
 
-To rebuild the suite offline, run `build_hidden_suite.py`, then validate the
-references again using a fresh output directory. The tests are hidden from the
-generation workflow, not secret public data or an operating-system sandbox.
+The committed suite is ready to use; rebuilding is optional. Running
+`../ark/.venv/bin/python build_hidden_suite.py` overwrites the suite and its
+manifest. Construction time limits can change the retained cases on another
+machine. Preserve the current suite and reports if you need their exact version,
+and validate any rebuilt suite in a fresh output directory before scoring solutions.
 
-## Runner Tests
+The additional inputs come from public data and targeted checks informed by the
+audit. A preliminary evaluation also exposed reference defects; the final suite
+applies the documented specification filters and was fully reevaluated. This was
+not a blind held-out evaluation. Hidden files are excluded from Ark's supplied
+workspaces and prompts, but filesystem access is not sandboxed. Coverage varies
+by task; `he_039` has only one additional case. Passing the suite provides
+evidence of generalization, not a guarantee of correctness for every valid input.
+
+## Local Tests
 
 ```bash
 ../ark/.venv/bin/python -m pytest -q -p no:cacheprovider tests
 ```
 
-These tests use a simulated agent without making model requests.
+The runner tests use a simulated agent; the evaluator tests check suite integrity,
+comparison rules, timeouts, and saved-solution evaluation. They make no model or
+network requests.
 The detailed review report is available in [VERIFICACAO.md](VERIFICACAO.md) (in Portuguese).
 
 ## Uploading Results to GitHub
@@ -359,23 +422,27 @@ to GitHub, run the following from the project root:
 ```bash
 git add .gitignore results/
 git status
-git commit -m "Add Ark evaluation results"
+git commit -m "chore(results): add Ark evaluation results"
 git push
 ```
 
 To include the hidden suite and its reports in a commit:
 
 ```bash
-git add build_hidden_suite.py evaluate_solutions.py evaluation/ evaluation_results/ tests/ README.md .gitignore
+git add build_hidden_suite.py evaluate_solutions.py evaluation/ evaluation_results/ tests/ README.md HIDDEN_EVALUATION_REPORT.md .gitignore
 git status
-git commit -m "eval: add hidden tests and offline solution evaluation"
+git commit -m "feat(eval): add hidden tests and offline solution evaluation"
+git push
 ```
 
 ## Cleanup Performed
 
 The duplicate `ark_latest/` code, the Linux `venv_ark_latest/` environment,
-previous results, traces, workspaces, and their ZIP archives were removed.
+obsolete results, traces, workspaces, and ZIP archives were removed during the
+initial migration. The historical runs currently under `results/` are retained.
 The old runner was replaced with `run_benchmark.py`. The task generator was also
 removed: all 164 tasks are already included, and running them does not require
 the `human_eval` package. Internal task Git repositories and unnecessary caches
-were removed; prompts, source files, and tests were preserved.
+were removed. All 164 tasks remain; prompts were subsequently simplified as
+described above, and the three test-helper import fixes are documented under
+[Isolation and Results](#isolation-and-results).

@@ -37,7 +37,12 @@ of the original HumanEval archive fetched from its upstream `master` branch.
    not a proof of correctness.
 5. Exclude cases on reference disagreement, exception, non-finite output, or
    timeout. Exclusion counts and sample reasons are recorded for every task in
-   `manifest.json`. No candidate result influenced this selection.
+   `manifest.json`. Targeted cases were informed by the earlier audit. A preliminary
+   candidate evaluation also exposed shared reference defects in `he_091` and
+   `he_141`; specification filters were then applied to all cases in those tasks.
+   Expected outputs were never taken from Ark's solutions. See the
+   [oracle review](../HIDDEN_EVALUATION_REPORT.md#oracle-review) for the sequence
+   of corrections. This is not a blind held-out evaluation.
 6. Check the reference implementations against the existing visible tests.
 7. Run the references through the actual hidden evaluator, including encoding,
    copying, time limits, and comparison rules. All 164 references pass both suites.
@@ -81,7 +86,9 @@ evaluation/
 └── vendor/                # Pinned upstream data and licenses
 ```
 
-Rebuild offline, from the project root, using an environment with Pytest:
+The committed suite is ready to use. Rebuilding overwrites its cases, references,
+and manifest; preserve the current version first if needed. Rebuild offline,
+from the project root, using an environment with Pytest:
 
 ```bash
 ../ark/.venv/bin/python build_hidden_suite.py
@@ -90,12 +97,14 @@ Rebuild offline, from the project root, using an environment with Pytest:
 Then validate the references:
 
 ```bash
-../ark/.venv/bin/python evaluate_solutions.py --validate-references
+../ark/.venv/bin/python evaluate_solutions.py --validate-references \
+  --output evaluation_results/reference-validation-v2
 ```
 
-Verify `overall: {"PASS": 164}` in the summary before interpreting candidate
-scores. If the suite or evaluator changes, preserve the old report and choose
-a fresh `--output`, for example `evaluation_results/reference-validation-v2`.
+Use an unused output name for a fresh validation; a completed output with
+identical inputs skips recorded tasks. Verify `overall: {"PASS": 164}` in the
+summary before interpreting candidate scores. If the suite or evaluator changes,
+preserve the old report and choose a fresh `--output` again.
 
 ## Isolation boundary
 
